@@ -12,7 +12,7 @@ import java.util.Vector;
 
 public class DataHandler {
     //Ramiro
-   /* public static Vector<existingConditionsMedicationsTable> getExistingConditionsMedications() {
+   /*public static Vector<existingConditionsMedicationsTable> getExistingConditionsMedications() {
         Vector<existingConditionsMedicationsTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
