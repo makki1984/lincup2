@@ -1,7 +1,7 @@
 package com.uh.rachel.util;
 
-//import com.uh.rachel.util.reportClasses.*;
-//import com.uh.rachel.util.tableClasses.*;
+import com.uh.rachel.util.reportClasses.*;
+import com.uh.rachel.util.tableClasses.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,23 +11,38 @@ import java.util.Date;
 import java.util.Vector;
 
 public class DataHandler {
-    //Ramiro
-   /*public static Vector<existingConditionsMedicationsTable> getExistingConditionsMedications() {
-        Vector<existingConditionsMedicationsTable> v = new Vector<>();
+    //Rachel
+   public static Vector<membersTable> getMembers() {
+        Vector<membersTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM existingConditionsMedications");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM members");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
-                v.add(new existingConditionsMedicationsTable(
-                        result.getInt("customerNumber"),
-                        result.getString("other")));
+                v.add(new membersTable(
+                        result.getInt("memberid"),
+                        result.getString("firstName"),
+                        result.getString("lastName"),
+                        result.getString("dob"),
+                        result.getString("email"),
+                        result.getString("pass"),
+                        result.getString("highSchool"),
+                        result.getString("afterGraduation"),
+                        result.getString("churchId"),
+                        result.getString("interest1"),
+                        result.getString("interest2"),
+                        result.getString("interest3"),
+                        result.getString("interest4"),
+                        result.getString("phone"),
+                        result.getInt("orgid"),
+                        result.getInt("schoolId"),
+                        result.getInt("adminId")));
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return v;
-    }*/
+    }
 }
