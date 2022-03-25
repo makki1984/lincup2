@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import static com.uh.rachel.util.DatabaseConnector.USERNAME;
 
 public class DatabaseConnector {
-    static String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static String CONNECTION_URL = "jdbc:sqlserver://CoT-CIS3365-13.cougarnet.uh.edu;database=karma-massage-db";
+    static String DRIVER = "com.mysql.cj.jdbc.Driver";
+    static String CONNECTION_URL = "jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
     static String USERNAME="admin";
-    static String PASSWORD="admin123";
+    static String PASSWORD="sunlight";
 }
