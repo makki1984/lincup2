@@ -24,20 +24,20 @@ public class DataHandler {
                         result.getInt("memberid"),
                         result.getString("firstName"),
                         result.getString("lastName"),
-                        result.getString("dob"),
+                        result.getDate("dob"),
                         result.getString("email"),
                         result.getString("pass"),
                         result.getString("highSchool"),
                         result.getString("afterGraduation"),
-                        result.getString("churchId"),
+                        result.getString("churchName"),
                         result.getString("interest1"),
                         result.getString("interest2"),
                         result.getString("interest3"),
                         result.getString("interest4"),
                         result.getString("phone"),
-                        result.getInt("orgid"),
-                        result.getInt("schoolId"),
-                        result.getInt("adminId")));
+                        result.getInt("orgId"),
+                        result.getInt("adminId"),
+                        result.getInt("eventId")));
             }
 
         } catch (Exception e) {

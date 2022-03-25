@@ -24,15 +24,15 @@
             <th>Pass</th>
             <th>High School</th>
             <th>After Graduation</th>
-            <th>Church ID</th>
+            <th>Church Name</th>
             <th>Interest 1</th>
             <th>Interest 2</th>
             <th>Interest 3</th>
             <th>Interest 4</th>
             <th>Phone</th>
             <th>Org ID</th>
-            <th>School ID</th>
             <th>Admin ID</th>
+            <th>Event ID</th>
         </tr>
 
         <% Vector<membersTable> v = DataHandler.getMembers();
@@ -48,15 +48,15 @@
             <td><%= String.valueOf(c.getPass())%></td>
             <td><%= String.valueOf(c.getHighSchool())%></td>
             <td><%= String.valueOf(c.getAfterGraduation())%></td>
-            <td><%= String.valueOf(c.getChurchID())%></td>
+            <td><%= String.valueOf(c.getChurchName())%></td>
             <td><%= String.valueOf(c.getInterest1())%></td>
             <td><%= String.valueOf(c.getInterest2())%></td>
             <td><%= String.valueOf(c.getInterest3())%></td>
             <td><%= String.valueOf(c.getInterest4())%></td>
             <td><%= String.valueOf(c.getPhone())%></td>
             <td><%= Integer.valueOf(c.getOrgid())%></td>
-            <td><%= Integer.valueOf(c.getSchoolid())%></td>
             <td><%= Integer.valueOf(c.getAdminId())%></td>
+            <td><%= Integer.valueOf(c.getEventId())%></td>
         </tr>
 
         <%

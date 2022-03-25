@@ -6,22 +6,22 @@ public class membersTable {
     int memberid;
     String firstName;
     String lastName;
-    String dob;
+    Date dob;
     String email;
     String pass;
     String highSchool;
     String afterGraduation;
-    String churchID;
+    String churchName;
     String interest1;
     String interest2;
     String interest3;
     String interest4;
     String phone;
     int orgid;
-    int schoolid;
     int adminId;
+    int eventId;
 
-    public membersTable(int memberid, String firstName, String lastName, String dob, String email, String pass, String highSchool, String afterGraduation, String churchID, String interest1, String interest2, String interest3, String interest4, String phone, int orgid, int schoolid, int adminId) {
+    public membersTable(int memberid, String firstName, String lastName, Date dob, String email, String pass, String highSchool, String afterGraduation, String churchName, String interest1, String interest2, String interest3, String interest4, String phone, int orgid, int adminId, int eventId) {
         this.memberid = memberid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,15 +30,15 @@ public class membersTable {
         this.pass = pass;
         this.highSchool = highSchool;
         this.afterGraduation = afterGraduation;
-        this.churchID = churchID;
+        this.churchName = churchName;
         this.interest1 = interest1;
         this.interest2 = interest2;
         this.interest3 = interest3;
         this.interest4 = interest4;
         this.phone = phone;
         this.orgid = orgid;
-        this.schoolid = schoolid;
         this.adminId = adminId;
+        this.eventId = eventId;
     }
 
     public membersTable(int memberid, String firstName, String lastName) {
@@ -59,7 +59,7 @@ public class membersTable {
         return lastName;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
@@ -79,8 +79,8 @@ public class membersTable {
         return afterGraduation;
     }
 
-    public String getChurchID() {
-        return churchID;
+    public String getChurchName() {
+        return churchName;
     }
 
     public String getInterest1() {
@@ -107,12 +107,12 @@ public class membersTable {
         return orgid;
     }
 
-    public int getSchoolid() {
-        return schoolid;
-    }
-
     public int getAdminId() {
         return adminId;
+    }
+
+    public int getEventId() {
+        return eventId;
     }
 
     public void setMemberid(int memberid) {
@@ -127,7 +127,7 @@ public class membersTable {
         this.lastName = lastName;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
@@ -147,8 +147,8 @@ public class membersTable {
         this.afterGraduation = afterGraduation;
     }
 
-    public void setChurchID(String churchID) {
-        this.churchID = churchID;
+    public void setChurchName(String churchName) {
+        this.churchName = churchName;
     }
 
     public void setInterest1(String interest1) {
@@ -175,11 +175,11 @@ public class membersTable {
         this.orgid = orgid;
     }
 
-    public void setSchoolid(int schoolid) {
-        this.schoolid = schoolid;
-    }
-
     public void setAdminId(int adminId) {
         this.adminId = adminId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 }
