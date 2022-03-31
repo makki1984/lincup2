@@ -5,10 +5,26 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>insertMembers</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.insertMembers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateMembers</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.updateMembers</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>deleteMembers</servlet-name>
         <servlet-class>com.uh.rachel.util.servlets.deleteMembers</servlet-class>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>insertMembers</servlet-name>
+        <url-pattern>/insertMembers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateMembers</servlet-name>
+        <url-pattern>/updateMembers</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>deleteMembers</servlet-name>
         <url-pattern>/deleteMembers</url-pattern>
