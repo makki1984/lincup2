@@ -4,4 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <servlet>
+        <servlet-name>deleteMembers</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.deleteMembers</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteMembers</servlet-name>
+        <url-pattern>/deleteMembers</url-pattern>
+    </servlet-mapping>
+
 </web-app>

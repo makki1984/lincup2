@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.Date;
 
 @WebServlet(name = "Members")
-public class updateMembers {
+public class updateMembers extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DataHandler.updateMembersRowByID(
                 (Integer.parseInt(request.getParameter("memberIdInput")!=""?request.getParameter("memberIdInput"):"0")),

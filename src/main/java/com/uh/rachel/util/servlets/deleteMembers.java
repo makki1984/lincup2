@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.Date;
 
 @WebServlet(name = "Members")
-public class deleteMembers {
+public class deleteMembers extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DataHandler.deleteMembersRowByID
                 (Integer.parseInt(request.getParameter("memberIdDelete")));
