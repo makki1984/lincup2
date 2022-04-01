@@ -61,7 +61,7 @@ public class DataHandler {
                         result.getString("eventType"),
                         result.getString("eventCity"),
                         result.getString("eventState"),
-                        result.getDate("date"),
+                        result.getDate("eventDate"),
                         result.getString("interest1"),
                         result.getString("interest2"),
                         result.getString("interest3"),

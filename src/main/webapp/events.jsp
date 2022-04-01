@@ -2,7 +2,6 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
 <%@ page import="java.sql.Date" %>
-<%@ page import="java.sql.Blob" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -34,7 +33,7 @@
         <td><%= String.valueOf(c.getEventType())%></td>
         <td><%= String.valueOf(c.getEventCity())%></td>
         <td><%= String.valueOf(c.getEventState())%></td>
-        <td><%= Date.valueOf(c.getEventDate())%></td>
+        <td><%= String.valueOf(c.getEventDate())%></td>
         <td><%= String.valueOf(c.getInterest1())%></td>
         <td><%= String.valueOf(c.getInterest2())%></td>
         <td><%= String.valueOf(c.getInterest3())%></td>
