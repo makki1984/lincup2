@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Vector;
 
 public class DataHandler {
-    //Rachel
+    //Makki
    public static Vector<membersTable> getMembers() {
         Vector<membersTable> v = new Vector<>();
         try {
@@ -45,4 +45,38 @@ public class DataHandler {
         }
         return v;
     }
+
+
+    public static Vector<eventsTable> getEvents() {
+        Vector<eventsTable> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                v.add(new eventsTable(
+                        result.getInt("eventId"),
+                        result.getString("eventName"),
+                        result.getString("eventType"),
+                        result.getString("eventCity"),
+                        result.getString("eventState"),
+                        result.getDate("date"),
+                        result.getString("interest1"),
+                        result.getString("interest2"),
+                        result.getString("interest3"),
+                        result.getString("interest4")));
+
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
+
+
+
+
 }
