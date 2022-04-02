@@ -49,7 +49,7 @@ public class DataHandler {
     public static void insertMembersRowByID(int memberIdInput, String firstNameInput, String lastNameInput, String dobInput, String emailInput, String passInput, String highSchoolInput, String afterGraduationInput, String churchNameInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input, String phoneInput, int orgIdInput, int adminIdInput, int eventIdInput) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO membersTable (memberid, firstName, lastName, dob, email, pass, highSchool, afterGraduation, churchName, interest1, interest2, interest3, interest4, phone, orgId, adminId, eventId) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO sunlight.members (memberid, firstName, lastName, dob, email, pass, highSchool, afterGraduation, churchName, interest1, interest2, interest3, interest4, phone, orgId, adminId, eventId) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             preparedStatement.setInt(1, memberIdInput);
             preparedStatement.setString(2, firstNameInput);
             preparedStatement.setString(3, lastNameInput);
@@ -78,7 +78,7 @@ public class DataHandler {
     public static void updateMembersRowByID(int memberIdInput, String firstNameInput, String lastNameInput, String dobInput, String emailInput, String passInput, String highSchoolInput, String afterGraduationInput, String churchNameInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input, String phoneInput, int orgIdInput, int adminIdInput, int eventIdInput) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE membersTable SET firstName=?, lastName=?, dob=?, email=?, pass=?, highSchool=?, afterGraduation=?, churchName=?, interest1=?, interest2=?, interest3=?, interest4=?, phone=?, orgId=?, adminId=?, eventId=? WHERE memberid=?");
+            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE sunlight.members SET firstName=?, lastName=?, dob=?, email=?, pass=?, highSchool=?, afterGraduation=?, churchName=?, interest1=?, interest2=?, interest3=?, interest4=?, phone=?, orgId=?, adminId=?, eventId=? WHERE memberid=?");
             preparedStatement.setInt(1, memberIdInput);
             preparedStatement.setString(2, firstNameInput);
             preparedStatement.setString(3, lastNameInput);
@@ -107,7 +107,7 @@ public class DataHandler {
     public static void deleteMembersRowByID(int memberIdDelete) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM members WHERE memberId=?");
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM sunlight.members WHERE memberId=?");
             preparedStatement.setInt(1, memberIdDelete);
             preparedStatement.executeUpdate();
             preparedStatement.close();
