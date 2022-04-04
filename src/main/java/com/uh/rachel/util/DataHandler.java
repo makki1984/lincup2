@@ -107,6 +107,26 @@ public class DataHandler {
 
 
 
+    public static Vector<requestsTable> getRequestsTable() {
+        Vector<requestsTable> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM requests");
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                v.add(new requestsTable(
+                        result.getInt("requestId"),
+                        result.getInt("orgId"),
+                        result.getInt("memberid")));
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
 
 
 

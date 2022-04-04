@@ -17,7 +17,7 @@ public class membersTable {
     String interest3;
     String interest4;
     String phone;
-    int orgid;
+    int orgId;
     int adminId;
     int eventId;
 
@@ -36,7 +36,7 @@ public class membersTable {
         this.interest3 = interest3;
         this.interest4 = interest4;
         this.phone = phone;
-        this.orgid = orgid;
+        this.orgId = orgId;
         this.adminId = adminId;
         this.eventId = eventId;
     }
@@ -103,8 +103,8 @@ public class membersTable {
         return phone;
     }
 
-    public int getOrgid() {
-        return orgid;
+    public int getOrgId() {
+        return orgId;
     }
 
     public int getAdminId() {
@@ -171,8 +171,8 @@ public class membersTable {
         this.phone = phone;
     }
 
-    public void setOrgid(int orgid) {
-        this.orgid = orgid;
+    public void setOrgId(int orgId) {
+        this.orgId = orgId;
     }
 
     public void setAdminId(int adminId) {

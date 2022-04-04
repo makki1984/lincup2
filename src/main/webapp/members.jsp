@@ -54,7 +54,7 @@
             <td><%= String.valueOf(c.getInterest3())%></td>
             <td><%= String.valueOf(c.getInterest4())%></td>
             <td><%= String.valueOf(c.getPhone())%></td>
-            <td><%= Integer.valueOf(c.getOrgid())%></td>
+            <td><%= Integer.valueOf(c.getOrgId())%></td>
             <td><%= Integer.valueOf(c.getAdminId())%></td>
             <td><%= Integer.valueOf(c.getEventId())%></td>
         </tr>
