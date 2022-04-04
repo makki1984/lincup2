@@ -79,4 +79,63 @@ public class DataHandler {
 
 
 
+    public static Vector<eventScheduleTable> getEventSchedule() {
+        Vector<eventScheduleTable> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM eventSchedule");
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                v.add(new eventScheduleTable(
+                        result.getInt("eventScheduleId"),
+                        result.getInt("eventId"),
+                        result.getInt("memberid"),
+                        result.getString("eventName"),
+                        result.getString("eventType")));
+
+
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
