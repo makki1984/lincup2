@@ -159,7 +159,29 @@ public class DataHandler {
 
 
 
+    public static Vector<tasksTable> getTasks() {
+        Vector<tasksTable> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM tasks");
+            ResultSet result = statement.executeQuery();
 
+            while (result.next()) {
+                v.add(new tasksTable(
+                        result.getInt("taskId"),
+                        result.getString("taskName"),
+                        result.getDate("taskDate"),
+                        result.getString("description"),
+                        result.getInt("memberid"),
+                        result.getInt("eventId"),
+                        result.getString("status")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
 
 
 

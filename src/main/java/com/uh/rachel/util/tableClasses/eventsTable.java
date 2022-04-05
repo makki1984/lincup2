@@ -29,11 +29,6 @@ public class eventsTable {
         this.interest4 = interest4;
     }
 
-    public eventsTable(int eventId, String eventName, Date eventDate) {
-        this.eventId = eventId;
-        this.eventName = eventName;
-        this.eventDate = eventDate;
-    }
 
     public int getEventId() {
         return eventId;
