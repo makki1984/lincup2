@@ -9,14 +9,14 @@ public class eventsTable {
     String eventType;
     String eventCity;
     String eventState;
-    Date eventDate;
+    String eventDate;
     String interest1;
     String interest2;
     String interest3;
     String interest4;
 
 
-    public eventsTable(int eventId, String eventName, String eventType, String eventCity, String eventState, Date eventDate, String interest1, String interest2, String interest3, String interest4) {
+    public eventsTable(int eventId, String eventName, String eventType, String eventCity, String eventState, String eventDate, String interest1, String interest2, String interest3, String interest4) {
         this.eventId = eventId;
         this.eventName = eventName;
         this.eventType = eventType;
@@ -50,7 +50,7 @@ public class eventsTable {
         return eventState;
     }
 
-    public Date getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
@@ -94,7 +94,7 @@ public class eventsTable {
         this.eventState = eventState;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 

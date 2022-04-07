@@ -8,5 +8,19 @@
       <jdbc-url>jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com" uuid="4887b171-6092-4368-b868-bbe376d4b183">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="AWS.RdsSigningPort" value="3306" />
+        <property name="AWS.RegionId" value="us-east-2" />
+        <property name="AWS.CredentialId" value="profile:default" />
+        <property name="AWS.RdsSigningHost" value="wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

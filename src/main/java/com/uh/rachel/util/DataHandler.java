@@ -1,13 +1,12 @@
 package com.uh.rachel.util;
 
-import com.uh.rachel.util.reportClasses.*;
 import com.uh.rachel.util.tableClasses.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Vector;
 
 public class DataHandler {
@@ -61,7 +60,7 @@ public class DataHandler {
                         result.getString("eventType"),
                         result.getString("eventCity"),
                         result.getString("eventState"),
-                        result.getDate("eventDate"),
+                        result.getString("eventDate"),
                         result.getString("interest1"),
                         result.getString("interest2"),
                         result.getString("interest3"),
@@ -211,7 +210,61 @@ public class DataHandler {
 
 
 
+    //Makki 04/05/2022 pending//
 
+    public static void deleteEventsRowByID(int rowToDelete) {
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM members WHERE eventId=?");
+            ps.setInt(1, rowToDelete);
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void insertEventsRowByID( int eventIdInput, String eventNameInput, String eventTypeInput, String eventCityInput, String eventStateInput, String eventDateInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input) {
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO events ( eventId, eventName, eventType, eventCity, eventState, eventDate, interest1, interest2, interest3, interest4) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setInt(1, eventIdInput);
+            ps.setString(2, eventNameInput);
+            ps.setString(3, eventTypeInput);
+            ps.setString(4, eventCityInput);
+            ps.setString(5, eventStateInput);
+            ps.setString(6, eventDateInput);
+            ps.setString(7, interest1Input);
+            ps.setString(8, interest2Input);
+            ps.setString(9, interest3Input);
+            ps.setString(10, interest4Input);
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {e.printStackTrace();}
+    }
+
+
+    public static void updateEventsRowByID(int eventIdInput, String eventNameInput, String eventTypeInput, String eventCityInput, String eventStateInput, String eventDateInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input) {
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("UPDATE events SET eventName=?, eventType=?, eventCity=?, eventState=?, eventDate=?, interest1=?, interest2=?, interest3=?, interest4=?  WHERE eventId=?");
+            ps.setInt(10, eventIdInput);
+            ps.setString(1, eventNameInput);
+            ps.setString(2, eventTypeInput);
+            ps.setString(3, eventCityInput);
+            ps.setString(4, eventStateInput);
+            ps.setString(5, eventDateInput);
+            ps.setString(6, interest1Input);
+            ps.setString(7, interest2Input);
+            ps.setString(8, interest3Input);
+            ps.setString(9, interest4Input);
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {e.printStackTrace();}
+    }
 
 
 
