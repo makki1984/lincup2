@@ -63,12 +63,6 @@
     <input name="interest4Input" type="text">
     <button type="submit">Update This Row</button>
 </form>
-
-
-
-
-
-
 </head>
 </body>
 
@@ -101,8 +95,6 @@
         <td><%= String.valueOf(c.getInterest2())%></td>
         <td><%= String.valueOf(c.getInterest3())%></td>
         <td><%= String.valueOf(c.getInterest4())%></td>
-
-
     </tr>
 
     <%

@@ -1236,11 +1236,15 @@ wordpress|schema||wordpress||UPDATE|G</Grants>
     </column>
     <foreign-key id="334" parent="289" name="members_ibfk_1">
       <ColNames>orgId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>orgId</RefColNames>
       <RefTableName>studentOrg</RefTableName>
     </foreign-key>
     <foreign-key id="335" parent="289" name="events_1xx">
       <ColNames>eventId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>eventId</RefColNames>
       <RefTableName>events</RefTableName>
     </foreign-key>

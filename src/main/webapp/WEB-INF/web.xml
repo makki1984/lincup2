@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!--Put the servlet block for each servlet, in the order of insert, update, and delete-->
     <servlet>
         <servlet-name>insertMembers</servlet-name>
         <servlet-class>com.uh.rachel.util.servlets.insertMembers</servlet-class>
@@ -17,6 +18,8 @@
         <servlet-class>com.uh.rachel.util.servlets.deleteMembers</servlet-class>
     </servlet>
 
+
+    <!--Put the servlet-mapping for each servlet, in the order of insert, update, and delete-->
     <servlet-mapping>
         <servlet-name>insertMembers</servlet-name>
         <url-pattern>/insertMembers</url-pattern>
