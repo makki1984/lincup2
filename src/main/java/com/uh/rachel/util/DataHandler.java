@@ -50,7 +50,7 @@ public class DataHandler {
         Vector<eventsTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.events");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -82,7 +82,7 @@ public class DataHandler {
         Vector<eventScheduleTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM eventSchedule");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.eventSchedule");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -110,7 +110,7 @@ public class DataHandler {
         Vector<requestsTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM requests");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.requests");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -133,7 +133,7 @@ public class DataHandler {
         Vector<studentOrgTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM studentOrg");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.studentOrg");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -162,7 +162,7 @@ public class DataHandler {
         Vector<tasksTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM tasks");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.tasks");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -189,7 +189,7 @@ public class DataHandler {
         Vector<taskStepsTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM taskSteps");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.taskSteps");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -215,7 +215,7 @@ public class DataHandler {
     public static void deleteEventsRowByID(int rowToDelete) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM members WHERE eventId=?");
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.members WHERE eventId=?");
             ps.setInt(1, rowToDelete);
             ps.executeUpdate();
             ps.close();
@@ -229,7 +229,7 @@ public class DataHandler {
     public static void insertEventsRowByID( int eventIdInput, String eventNameInput, String eventTypeInput, String eventCityInput, String eventStateInput, String eventDateInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO events ( eventId, eventName, eventType, eventCity, eventState, eventDate, interest1, interest2, interest3, interest4) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.events ( eventId, eventName, eventType, eventCity, eventState, eventDate, interest1, interest2, interest3, interest4) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setInt(1, eventIdInput);
             ps.setString(2, eventNameInput);
             ps.setString(3, eventTypeInput);
@@ -249,7 +249,7 @@ public class DataHandler {
     public static void updateEventsRowByID(int eventIdInput, String eventNameInput, String eventTypeInput, String eventCityInput, String eventStateInput, String eventDateInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("UPDATE events SET eventName=?, eventType=?, eventCity=?, eventState=?, eventDate=?, interest1=?, interest2=?, interest3=?, interest4=?  WHERE eventId=?");
+            PreparedStatement ps = conn.prepareStatement("UPDATE sunlight.events SET eventName=?, eventType=?, eventCity=?, eventState=?, eventDate=?, interest1=?, interest2=?, interest3=?, interest4=?  WHERE eventId=?");
             ps.setInt(10, eventIdInput);
             ps.setString(1, eventNameInput);
             ps.setString(2, eventTypeInput);
