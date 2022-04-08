@@ -116,10 +116,6 @@ public class DataHandler {
         }
     }
 
-
-
-
-
     public static Vector<eventsTable> getEvents() {
         Vector<eventsTable> v = new Vector<>();
         try {
@@ -149,9 +145,6 @@ public class DataHandler {
         return v;
     }
 
-
-
-
     public static Vector<eventScheduleTable> getEventSchedule() {
         Vector<eventScheduleTable> v = new Vector<>();
         try {
@@ -177,9 +170,6 @@ public class DataHandler {
         return v;
     }
 
-
-
-
     public static Vector<requestsTable> getRequestsTable() {
         Vector<requestsTable> v = new Vector<>();
         try {
@@ -200,8 +190,6 @@ public class DataHandler {
         }
         return v;
     }
-
-
 
     public static Vector<studentOrgTable> getStudentOrg() {
         Vector<studentOrgTable> v = new Vector<>();
@@ -229,9 +217,6 @@ public class DataHandler {
         return v;
     }
 
-
-
-
     public static Vector<tasksTable> getTasks() {
         Vector<tasksTable> v = new Vector<>();
         try {
@@ -255,9 +240,6 @@ public class DataHandler {
         }
         return v;
     }
-
-
-
 
     public static Vector<taskStepsTable> getTaskSteps() {
         Vector<taskStepsTable> v = new Vector<>();
