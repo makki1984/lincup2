@@ -271,7 +271,7 @@ public class DataHandler {
     public static void deleteEventsRowByID(int rowToDelete) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.members WHERE eventId=?");
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.events WHERE eventId=?");
             ps.setInt(1, rowToDelete);
             ps.executeUpdate();
             ps.close();
@@ -321,28 +321,6 @@ public class DataHandler {
             ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

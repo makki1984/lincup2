@@ -30,4 +30,45 @@
         <url-pattern>/deleteMembers</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>insertEvents</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.insertEvents</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateEvents</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.updateEvents</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteEvents</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.deleteEvents</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>insertEvents</servlet-name>
+        <url-pattern>/insertEvents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateEvents</servlet-name>
+        <url-pattern>/updateEvents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteEvents</servlet-name>
+        <url-pattern>/deleteEvents</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </web-app>
