@@ -5,8 +5,62 @@
 <html>
 <head>
   <title>Tasks</title>
+
+  <script type="text/javascript">
+    function showUp(){
+      var valuet = document.getElementById('selection').value;
+      if (valuet == "deleteRow"){
+        document.getElementId('deleteForm').style.display = "flex";
+      }
+      if (valuet == "updateRow"){
+        document.getElementId('updateForm').style.display = "flex";
+      }
+      if (valuet == "insertRow"){
+        document.getElementId('insertForm').style.display = "flex";
+      }
+
+    }
+  </script>
 </head>
 <body>
+
+<select id="selection">
+  <option value="deleteRow">Delete Task</option>
+  <option value="updateRow">Update Task</option>
+  <option value="insertRow">Insert Task</option>
+</select>
+
+<button onclick="showUp();">Make Form Visible</button>
+
+<form action="deleteTasks" id="deleteForm" style="display:none;" method="post">
+  <input name="rowToDelete" type="text">
+  <button type="submit">Delete This Row</button>
+</form>
+
+<form action="insertTasks" id="insertForm" style="display:none;" method="post">
+  <input name="taskIdInput" type="text">
+  <input name="taskNameInput" type="text">
+  <input name="taskDateInput" type="text">
+  <input name="taskDescriptionInput" type="text">
+  <input name="MemberIdInput" type="text">
+  <input name="EventIdInput" type="text">
+  <input name="taskStatusInput" type="text">
+  <button type="submit">Insert This Row</button>
+</form>
+
+<form action="updateTasks" id="updateForm" style="display:none;" method="post">
+  <input name="taskIdInput" type="text">
+  <input name="taskNameInput" type="text">
+  <input name="taskDateInput" type="text">
+  <input name="taskDescriptionInput" type="text">
+  <input name="MemberIdInput" type="text">
+  <input name="EventIdInput" type="text">
+  <input name="taskStatusInput" type="text">
+  <button type="submit">Update This Row</button>
+</form>
+
+
+
 <table>
   <tr>
     <th>Task ID</th>

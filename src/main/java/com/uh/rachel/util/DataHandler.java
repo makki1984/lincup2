@@ -239,6 +239,20 @@ public class DataHandler {
             ps.setInt(3, memberIdInput);
         } catch (Exception e) {e.printStackTrace();}
     }
+
+    public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, taskDescription, memberid, eventId, taskStatus) VALUES(?, ?, ?, ?, ?, ?, ?)");
+            ps.setInt(1, taskIdInput);
+            ps.setString(2, taskNameInput);
+            ps.setString(3, taskDateInput);
+            ps.setString(4, taskDescriptionInput);
+            ps.setInt(5, MemberIdInput);
+            ps.setInt(6, EventIdInput);
+            ps.setString(7, taskStatusInput);
+        } catch (Exception e) {e.printStackTrace();}
+    }
 // End of Create Operations (CRUD)
 
 // Update Operations (CRUD)
