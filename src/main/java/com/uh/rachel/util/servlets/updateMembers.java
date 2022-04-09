@@ -27,7 +27,7 @@ public class updateMembers extends HttpServlet{
                 (request.getParameter("interest3Input")!=""?request.getParameter("interest3Input"):"0"),
                 (request.getParameter("interest4Input")!=""?request.getParameter("interest4Input"):"0"),
                 (request.getParameter("phoneInput")!=""?request.getParameter("phoneInput"):"0"),
-                (Integer.parseInt(request.getParameter("orgIdInput")!=""?request.getParameter("orgIdInputInput"):"0")),
+                (Integer.parseInt(request.getParameter("orgIdInput")!=""?request.getParameter("orgIdInput"):"0")),
                 (Integer.parseInt(request.getParameter("adminIdInput")!=""?request.getParameter("adminIdInput"):"0")),
                 (Integer.parseInt(request.getParameter("eventIdInput")!=""?request.getParameter("eventIdInput"):"0"))
         );

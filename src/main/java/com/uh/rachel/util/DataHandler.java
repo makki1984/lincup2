@@ -314,6 +314,20 @@ public class DataHandler {
             ps.setInt(3, memberIdInput);
         } catch (Exception e) {e.printStackTrace();}
     }
+
+    public static void updateTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("UPDATE sunlight.tasks SET taskName=?, date=?, description=?, memberid=?, eventId=?, status=?, WHERE taskId=?");
+            ps.setInt(1, taskIdInput);
+            ps.setString(2, taskNameInput);
+            ps.setString(3, taskDateInput);
+            ps.setString(4, taskDescriptionInput);
+            ps.setInt(5, MemberIdInput);
+            ps.setInt(6, EventIdInput);
+            ps.setString(7, taskStatusInput);
+        } catch (Exception e) {e.printStackTrace();}
+    }
 //End of Update Operations (CRUD)
 
 //Delete Operations (CRUD)
@@ -346,6 +360,18 @@ public class DataHandler {
             Connection conn = ConnectionProvider.getConnection();
             PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.requests WHERE requestId=?");
             ps.setInt(1, RequestIdDelete);
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteTasksRowByID(int taskIdDelete){
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.tasks WHERE taskId=?");
+            ps.setInt(1, taskIdDelete);
             ps.executeUpdate();
             ps.close();
         } catch (Exception e) {
