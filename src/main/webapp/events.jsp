@@ -86,7 +86,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Options:</h6>
                     <a class="collapse-item" href="tasks.jsp">Task List</a>
-                    <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
+                    <a class="collapse-item" href="taskSteps.jsp">Task Steps</a>
 
                 </div>
             </div>

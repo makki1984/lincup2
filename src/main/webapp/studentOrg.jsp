@@ -1,12 +1,6 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="com.uh.rachel.util.tableClasses.studentOrgTable" %>
-<%@ page import="java.util.Vector" %><%--
-  Created by IntelliJ IDEA.
-  User: Makki
-  Date: 4/4/2022
-  Time: 11:51 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.Vector" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">

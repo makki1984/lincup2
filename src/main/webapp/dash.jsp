@@ -1,6 +1,5 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
-<%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
