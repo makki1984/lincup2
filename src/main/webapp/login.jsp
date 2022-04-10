@@ -45,7 +45,7 @@
                                 <!-- Registration Card-->
 
 
-                                <form class="needs-validation" novalidate>
+                                <form action="login" method="post">
 
 
                                     <!-- Login Email -->
@@ -65,7 +65,7 @@
                                         <input type="password" autofocus class="form-control" id="loginPassForm"
                                                placeholder="Password" required>
                                         <div class="invalid-feedback">
-                                            Please provide a password.
+                                            ${message}
                                         </div>
                                     </div>
 
