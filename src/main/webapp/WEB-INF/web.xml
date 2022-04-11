@@ -18,6 +18,11 @@
         <servlet-class>com.uh.rachel.util.servlets.deleteMembers</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>loginVal</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.loginVal</servlet-class>
+    </servlet>
+
 
     <!--Put the servlet-mapping for each servlet, in the order of insert, update, and delete-->
     <servlet-mapping>
@@ -59,7 +64,10 @@
         <url-pattern>/deleteEvents</url-pattern>
     </servlet-mapping>
 
-
+    <servlet-mapping>
+        <servlet-name>loginVal</servlet-name>
+        <url-pattern>/loginVal</url-pattern>
+    </servlet-mapping>
 
 
 
