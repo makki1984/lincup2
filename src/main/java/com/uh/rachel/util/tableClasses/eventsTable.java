@@ -3,7 +3,10 @@ package com.uh.rachel.util.tableClasses;
 
 import java.sql.Date;
 
-public class eventsTable {
+public class
+
+
+eventsTable {
     int eventId;
     String eventName;
     String eventType;
