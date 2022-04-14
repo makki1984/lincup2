@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">LINC-UP Registration</h5>
                         <br>
-                        <form class="row g-3 needs-validation" novalidate>
+                        <form action="/registeration" class="row g-3 needs-validation" method="post" >
 
                             <!-- First Name -->
                             <div class="col-md-4">
