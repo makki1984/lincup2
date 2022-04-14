@@ -43,7 +43,7 @@ public class RegistrationChk extends HttpServlet{
 
         long i = RegistrationModel.addMember(member);
 
-        request.getRequestDispatcher("jsp/registration.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
     }
 }
 
