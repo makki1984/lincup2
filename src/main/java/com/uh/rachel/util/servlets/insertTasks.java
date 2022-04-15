@@ -14,9 +14,12 @@ public class insertTasks extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DataHandler.insertTasksRowByID(
                 Integer.parseInt(request.getParameter("taskIdInput")),
-                (request.getParameter("taskNameInput")), (request.getParameter("taskDateInput")),
-                (request.getParameter("taskDescriptionInput")), (Integer.parseInt(request.getParameter("MemberIdInput"))),
-                (Integer.parseInt(request.getParameter("EventIdInput"))), (request.getParameter("taskStatusInput"))
+                (request.getParameter("taskNameInput")),
+                (request.getParameter("taskDateInput")),
+                (request.getParameter("taskDescriptionInput")),
+                (Integer.parseInt(request.getParameter("MemberIdInput"))),
+                (Integer.parseInt(request.getParameter("EventIdInput"))),
+                (request.getParameter("taskStatusInput"))
         );
         response.sendRedirect("./tasks.jsp");
     }

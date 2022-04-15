@@ -147,7 +147,7 @@ public class DataHandler {
                 v.add(new tasksTable(
                         result.getInt("taskId"),
                         result.getString("taskName"),
-                        result.getDate("taskDate"),
+                        result.getString("taskDate"),
                         result.getString("description"),
                         result.getInt("memberid"),
                         result.getInt("eventId"),
@@ -230,16 +230,6 @@ public class DataHandler {
         } catch (Exception e) {e.printStackTrace();}
     }
 
-    public static void insertRequestsRowByID(int requestIdInput, int orgIdInput, int memberIdInput) {
-        try {
-            Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.requests (requestId, orgId, memberid) VALUES(?, ?, ?)");
-            ps.setInt(1, requestIdInput);
-            ps.setInt(2, orgIdInput);
-            ps.setInt(3, memberIdInput);
-        } catch (Exception e) {e.printStackTrace();}
-    }
-
     public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();
@@ -251,8 +241,21 @@ public class DataHandler {
             ps.setInt(5, MemberIdInput);
             ps.setInt(6, EventIdInput);
             ps.setString(7, taskStatusInput);
+            ps.executeUpdate();
+            ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
+    public static void insertRequestsRowByID(int requestIdInput, int orgIdInput, int memberIdInput) {
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.requests (requestId, orgId, memberid) VALUES(?, ?, ?)");
+            ps.setInt(1, requestIdInput);
+            ps.setInt(2, orgIdInput);
+            ps.setInt(3, memberIdInput);
+        } catch (Exception e) {e.printStackTrace();}
+    }
+
+
 // End of Create Operations (CRUD)
 
 // Update Operations (CRUD)

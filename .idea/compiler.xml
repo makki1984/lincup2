@@ -10,8 +10,5 @@
         <module name="lincup" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="karmaMassage" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

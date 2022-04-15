@@ -190,6 +190,7 @@
                             <div class="card-body">
 <table>
     <tr>
+
         <th>Event Schedule ID</th>
         <th>Event ID</th>
         <th>Member ID</th>
@@ -214,6 +215,18 @@
     %>
 
 </table>
+
+
+            <div id="dp"></div>
+            <script type="text/javascript">
+                const dp = new DayPilot.Calendar("dp", {
+                    viewType: "Week"
+                });
+                dp.init();
+            </script>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -221,8 +234,7 @@
                 </div>
             </div>
 
-
-
+            <!-- calendar initialization and config -->
 
 
 
@@ -289,8 +301,7 @@
 
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
-
-
+<script src="js/daypilot/daypilot-all.min.js"></script>
 </body>
 
 </html>

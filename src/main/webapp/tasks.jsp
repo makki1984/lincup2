@@ -16,11 +16,12 @@
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 </head>
 
 <body id="page-top">
@@ -190,20 +191,17 @@
 
 
 
-<select id="selection">
-  <option value="deleteRow">Delete Task</option>
-  <option value="updateRow">Update Task</option>
-  <option value="insertRow">Insert Task</option>
-</select>
 
-<button onclick="showUp();">Make Form Visible</button>
+
+
+
 
 <form action="deleteTasks" id="deleteForm" style="display:none;" method="post">
   <input name="rowToDelete" type="text">
   <button type="submit">Delete This Row</button>
 </form>
 
-<form action="insertTasks" id="insertForm" style="display:none;" method="post">
+<form action="insertTasks" method="post">
   <input name="taskIdInput" type="text">
   <input name="taskNameInput" type="text">
   <input name="taskDateInput" type="text">
@@ -226,17 +224,147 @@
 </form>
 
 
+                <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                     aria-labelledby="addModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Add Event</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
 
-<table>
-  <tr>
-    <th>Task ID</th>
-    <th>Task Name</th>
-    <th>Task Date</th>
-    <th>Description</th>
-    <th>Member ID</th>
-    <th>Event ID</th>
-    <th>Status</th>
-  </tr>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+                        <form action="insertEvents" id="insertForm" method="post">
+
+                          <div class="form row">
+
+                            <div class="form-group col-md-4">
+                              <label class="form-label">Event ID</label>
+
+                              <input name="eventIdInput" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                              <label class="form-label">Event Name</label>
+                              <input name="eventNameInput" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                              <label class="form-label">Event Type</label>
+                              <input name="eventTypeInput" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+                          </div>
+
+                          <!--                          -->
+                          <div class="form row">
+
+                            <div class="form-group col-md-4">
+
+                              <label class="form-label">City
+                              </label>
+                              <input name="eventCityInput" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+
+
+                            <div class="form-group col-md-2">
+
+                              <label class="form-label">State
+                              </label>
+                              <input name="eventStateInput" type="text"
+                                     class="form-control form-control-sm">
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                              <label class="form-label">Date
+                              </label>
+                              <input name="eventDateInput" type="date"
+                                     class="form-control form-control-sm">
+
+                            </div>
+                          </div>
+
+                          <div class="form row">
+
+                            <div class="form-group col-md-6 ml-auto
+">
+                              <label class="form-label">Interest 1
+                              </label>
+                              <input name="interest1Input" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+                            <div class="form-group col-md-6 ml-auto
+">
+                              <label class="form-label">Interest 2
+                              </label>
+                              <input name="interest2Input" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+                          </div>
+
+                          <div class="form row">
+                            <div class="form-group col-md-6">
+                              <label class="form-label">Interest 3
+                              </label>
+                              <input name="interest3Input" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label class="form-label">Interest 4
+                              </label>
+                              <input name="interest4Input" type="text"
+                                     class="form-control form-control-sm">
+                            </div>
+                          </div>
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Cancel
+                            </button>
+
+                            <button type="submit" class="btn btn-primary">Insert New Event
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="table-responsive">
+                  <table id="eventsTable"
+                         class="display"
+                         style="width:100%"
+
+
+                  >
+                    <thead>
+                    <tr class="tr-class-1">
+                      <th  data-valign="middle">Task ID</th>
+                      <th  data-valign="middle">Task Name</th>
+                      <th  data-valign="middle">Task Date</th>
+                      <th  data-valign="middle">Member ID</th>
+                      <th data-valign="middle">Event ID</th>
+                      <th  data-valign="middle">Description</th>
+                      <th  data-valign="middle">Status</th>
+                      <th class="text-center">Actions</th>
+
+                    </tr>
+
+                    </thead>
+                    <tbody>
+
 
   <% Vector<tasksTable> v = DataHandler.getTasks();
     for (tasksTable c : v) {
@@ -256,7 +384,19 @@
   <%
     }
   %>
-
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <th>Task ID</th>
+                      <th>Task Name</th>
+                      <th>Task Date</th>
+                      <th>Member ID</th>
+                      <th>Event ID</th>
+                      <th>Description</th>
+                      <th>Status</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                    </tfoot>
 </table>
               </div>
             </div>
@@ -311,7 +451,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <a class="btn btn-primary" href="login.jsp">Logout</a>
       </div>
     </div>
   </div>
@@ -328,11 +468,13 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 
 </body>

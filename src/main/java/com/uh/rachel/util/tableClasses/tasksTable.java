@@ -3,17 +3,18 @@ package com.uh.rachel.util.tableClasses;
 
 import java.sql.Date;
 
-public class tasksTable {
+public class
+tasksTable {
     int taskId;
     String taskName;
-    Date   taskDate;
+    String   taskDate;
     String description;
     int memberid;
     int eventId;
     String status;
 
 
-    public tasksTable(int taskId, String taskName, Date taskDate, String description, int memberid, int eventId, String status) {
+    public tasksTable(int taskId, String taskName, String taskDate, String description, int memberid, int eventId, String status) {
         this.taskId = taskId;
         this.taskName = taskName;
         this.taskDate = taskDate;
@@ -32,7 +33,7 @@ public class tasksTable {
         return taskName;
     }
 
-    public Date getTaskDate() {
+    public String getTaskDate() {
         return taskDate;
     }
 
@@ -64,7 +65,7 @@ public class tasksTable {
         this.taskName = taskName;
     }
 
-    public void setTaskDate(Date taskDate) {
+    public void setTaskDate(String taskDate) {
         this.taskDate = taskDate;
     }
 

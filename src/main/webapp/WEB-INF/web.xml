@@ -64,11 +64,6 @@
         <url-pattern>/deleteEvents</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>loginVal</servlet-name>
-        <url-pattern>/loginVal</url-pattern>
-    </servlet-mapping>
-
 
 
 

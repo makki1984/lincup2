@@ -18,27 +18,12 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <script type="text/javascript">
-        function makeVisible() {
-            var valuey = document.getElementById('selection').value;
-            if (valuey === "deleteRow") {
-                document.getElementById('deleteForm').style.display = "flex";
-            }
-            if (valuey == "insertRow") {
-                document.getElementById('insertForm').style.display = "flex";
-            }
-            if (valuey == "updateRow") {
-            }
-            document.getElementById('updateForm').style.display = "flex";
-        }
-
-    </script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 </head>
 
 <body id="page-top">
@@ -213,14 +198,13 @@
                                 <option value="updateRow">Update Member</option>
                             </select>
 
-                            <button onclick="makeVisible();">Make Form Visible</button>
 
                             <form action="deleteMembers" id="deleteForm" style="display:none;" method="post">
                                 <input name="memberIdDelete" type="text">
                                 <button type="submit">Delete This Row</button>
                             </form>
 
-                            <form action="insertMembers" id="insertForm" style="display:none;" method="post">
+                            <form action="insertMembers" method="post">
                                 <input name="memberIdInput" type="text">
                                 <input name="firstNameInput" type="text">
                                 <input name="lastNameInput" type="text">
@@ -384,7 +368,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="login.jsp">Logout</a>
             </div>
         </div>
     </div>
@@ -401,11 +385,15 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 
 </body>
