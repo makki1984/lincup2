@@ -51,7 +51,7 @@
                                     <!-- Login Email -->
                                     <div class="col-md-12">
 
-                                        <input type="text" class="form-control" id="loginEmailForm"
+                                        <input type="text" class="form-control" id="loginEmailForm" name="email"
                                                placeholder="Email Address" required>
                                         <div class="invalid-feedback">
                                             Please provide a valid email.
@@ -62,7 +62,7 @@
                                     <br>
                                     <!-- Login Password -->
                                     <div class="col-md-12">
-                                        <input type="password" autofocus class="form-control" id="loginPassForm"
+                                        <input type="password" autofocus class="form-control" id="loginPassForm" name="password"
                                                placeholder="Password" required>
                                         <div class="invalid-feedback">
                                             ${message}

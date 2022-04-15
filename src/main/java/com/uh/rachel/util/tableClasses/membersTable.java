@@ -41,6 +41,10 @@ public class membersTable {
         this.eventId = eventId;
     }
 
+    public membersTable() {
+
+    }
+
     public int getMemberid() {
         return memberid;
     }

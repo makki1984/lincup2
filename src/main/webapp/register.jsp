@@ -38,12 +38,12 @@
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">LINC-UP Registration</h5>
                         <br>
-                        <form action="/registeration" class="row g-3 needs-validation" method="post" >
+                        <form action="registration" class="row g-3 needs-validation" method="post" >
 
                             <!-- First Name -->
                             <div class="col-md-4">
                                 <label for="firstNameInput" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="firstNameInput" placeholder="First"
+                                <input type="text" class="form-control" id="firstNameInput" name="firstName" placeholder="First"
                                        required>
                                 <div class="valid-feedback">
                                     Looks good!
@@ -53,7 +53,7 @@
                             <!-- Last Name -->
                             <div class="col-md-4">
                                 <label for="lastNameInput" class="form-label">Last name</label>
-                                <input type="text" class="form-control" id="lastNameInput" placeholder="Last"
+                                <input type="text" class="form-control" id="lastNameInput" placeholder="Last" name="lastName"
                                        required>
                                 <div class="valid-feedback">
                                     Looks good!
@@ -62,7 +62,7 @@
                             <!-- Phone Number-->
                             <div class="col-md-4">
                                 <label for="phoneInput" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="phoneInput" placeholder="Phone #"
+                                <input type="phone" class="form-control" id="phoneInput" name="phone" placeholder="Phone #"
                                        required>
                                 <div class="invalid-feedback">
                                     Please provide a valid phone number.
@@ -72,7 +72,7 @@
                             <!-- DOB -->
                             <div class="col-md-6">
                                 <label for="dobInput" class="form-label">Date of Birth</label>
-                                <input class="form-control" type="date" id="dobInput" required>
+                                <input class="form-control" type="date" id="dobInput" name="dob" required>
                                 <div class="invalid-feedback">
                                     Please enter a date.
                                 </div>
@@ -82,7 +82,7 @@
 
                             <div class="col-md-6">
                                 <label for="churchNameInput" class="form-label">Church</label>
-                                <select class="form-select" id="churchNameInput" required>
+                                <select class="form-select" id="churchNameInput" name="churchName" required>
                                     <option selected disabled value="">Choose...</option>
                                     <option>Church 1</option>
                                     <option>Church 2</option>
@@ -95,7 +95,7 @@
 
                             <div class="col-md-6">
                                 <label for="highSchoolInput" class="form-label">Current High School</label>
-                                <select class="form-select" id="highSchoolInput" required>
+                                <select class="form-select" id="highSchoolInput" name="highSchool" required>
                                     <option selected disabled value="">Choose...</option>
                                     <option>Summerwood High School</option>
                                     <option>North Shore High School</option>
@@ -108,7 +108,7 @@
 
                             <div class="col-md-6">
                                 <label for="afterGraduationInput" class="form-label">After Graduation College</label>
-                                <select class="form-select" id="afterGraduationInput" required>
+                                <select class="form-select" id="afterGraduationInput" name="afterGraduation" required>
                                     <option selected disabled value="">Choose...</option>
                                     <option>University of Houston</option>
                                     <option>University of Texas</option>
@@ -122,7 +122,7 @@
 
                             <div class="col-md-6">
                                 <label for="emailInput" class="form-label">Email</label>
-                                <input type="text"  class="form-control" id="emailInput" placeholder="email@example.com" required>
+                                <input type="text"  class="form-control" id="emailInput" name="email" placeholder="email@example.com" required>
                                 <div class="invalid-feedback">
                                     Please enter a email.
                                 </div>
@@ -131,7 +131,7 @@
                             <div class="col-md-6">
                                 <label for="passInput" class="form-label">Password</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="passInput" required>
+                                    <input type="password" class="form-control" id="passInput" name="pass" required>
                                     <div class="invalid-feedback">
                                         Please enter a password.
                                     </div>
@@ -142,7 +142,7 @@
                             <div class="col-md-12" style="text-align: center;">
                                 <label for="interest1Input" class="form-label">Select Interests (hold crtl for
                                     multiple)</label>
-                                <select class="form-select" multiple aria-label="multiple select example">
+                                <select class="form-select" name="interests"  multiple aria-label="multiple select example" required>
                                     <option>Music</option>
                                     <option>Outdoors</option>
                                     <option>Crafts</option>
@@ -150,9 +150,13 @@
                                 </select>
 
 
-
                                 <!-- Submit-->
                             </div>
+
+                            <input type="hidden" name="orgId" value="1">
+                            <input type="hidden" name="adminId" value="1">
+                            <input type="hidden" name="eventId" value="1">
+
                             <div class="col-12" style="text-align: center;">
                                 <button class="btn btn-primary" type="submit">Submit form</button>
                             </div>

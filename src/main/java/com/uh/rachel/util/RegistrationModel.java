@@ -30,12 +30,17 @@ public class RegistrationModel {
 
     public static long addMember (membersTable member) {
         int i = 0;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         String CONNECTION="jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
         String USER="admin";
         String PASSWORD="sunlight";
         try {
             Connection conn = DriverManager.getConnection(CONNECTION, USER, PASSWORD);
-            PreparedStatement statement = conn.prepareStatement("insert into members values (?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement statement = conn.prepareStatement("insert into members (memberid, firstName, lastName, phone, dob, churchName, highSchool, afterGraduation, email, pass, interest1, interest2, interest3, interest4, orgId, adminId, eventId) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setLong(1, nextPk());
             statement.setString(2, member.getFirstName());
             statement.setString(3, member.getLastName());
@@ -46,6 +51,13 @@ public class RegistrationModel {
             statement.setString(8, member.getAfterGraduation());
             statement.setString(9, member.getEmail());
             statement.setString(10, member.getPass());
+            statement.setString(11, member.getInterest1());
+            statement.setString(12, member.getInterest2());
+            statement.setString(13, member.getInterest3());
+            statement.setString(14, member.getInterest4());
+            statement.setInt(15, member.getOrgid());
+            statement.setInt(16, member.getAdminId());
+            statement.setInt(17, member.getEventId());
 
             i = statement.executeUpdate();
 
