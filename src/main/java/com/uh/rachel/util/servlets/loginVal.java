@@ -14,28 +14,24 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet(name = "/login")
+@WebServlet(name = "login", urlPatterns = {"/login"})
 
 public class loginVal extends HttpServlet{
 
-    public loginVal() {
-        super();
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
-        String password = request.getParameter("pass");
+        String password = request.getParameter("password");
 
         CheckLogin loginCheck = new CheckLogin();
 
         try {
             membersTable member = loginCheck.checkLogin(email, password);
-            String destinationPage = "src/main/webapp/login.jsp";
+            String destinationPage = "login.jsp";
 
             if (member != null){
                 HttpSession session = request.getSession();
                 session.setAttribute("member", member);
-                destinationPage = "src/main/webapp/dash.jsp";
+                destinationPage = "dash.jsp";
             } else {
                 String message = "Incorrect email/password";
                 request.setAttribute("message", message);
