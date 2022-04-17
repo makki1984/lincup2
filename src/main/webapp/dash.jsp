@@ -1,5 +1,6 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
+<%@ page import="com.uh.rachel.util.reportClasses.report3" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +20,22 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.0/main.min.css,npm/fullcalendar@5.11.0/main.min.css">
+
+    <style>html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 1100px;
+        margin: 40px auto;
+    }</style>
 </head>
 
-<body id="page-top">
+<div id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -176,20 +189,90 @@
             <div class="container-fluid mt-5 pt-5">
 
                 <!-- Page Heading -->
-
-                <h1 class="text-center text-dark"><b>Dashboard</b></h1>
-
-
+                <h1 class="display-1 text-center"><b>Dashboard</b></h1>
+            </br>
 
 
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Calendar</h5>
+                            <div id='calendar'></div>
+                            <img class="card-img-bottom" src="https://img.freepik.com/free-vector/business-planning-web-design-concept-with-people-characters-illustration_9209-4585.jpg" alt="Card image cap">
 
+                        </div>
+
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
                     </div>
+                    <div class="card">
+                        <img class="card-img-top" src="https://image.freepik.com/free-vector/colleagues-working-together-project_74855-6308.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Requests</h5>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">List group item heading</h5>
+                                        <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    <small>Donec id elit non mi porta.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">List group item heading</h5>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    <small class="text-muted">Donec id elit non mi porta.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">List group item heading</h5>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    <small class="text-muted">Donec id elit non mi porta.</small>
+                                </a>
+                            </div>
 
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Inspiring Quotes</h5>
+                        </br>
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1578909195669-6890bd797898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1617251137884-f135eccf6942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1542904990-579199bba13a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=713&q=80" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1471400974796-1c823d00a96f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1542271484-f163235efa6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Third slide">
+                                    </div>
+                                </div>
+                            </div>                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 2 mins ago</small>
+                        </div>
+                    </div>
                 </div>
+                </br>
+
             </div>
-
-
-
 
 
 
@@ -251,13 +334,22 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.0,npm/fullcalendar@5.11.0/locales-all.min.js,npm/fullcalendar@5.11.0/main.min.js"></script>
 
+<script>
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    });
+
+</script>
 </body>
 
 </html>

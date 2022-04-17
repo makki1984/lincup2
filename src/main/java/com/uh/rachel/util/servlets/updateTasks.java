@@ -9,7 +9,6 @@ import java.io.IOException;
 
 
 @WebServlet(name = "Tasks")
-
 public class updateTasks extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DataHandler.updateTasksRowByID(

@@ -263,23 +263,23 @@ public class DataHandler {
         try {
             Connection conn = ConnectionProvider.getConnection();
             PreparedStatement preparedStatement = conn.prepareStatement("UPDATE sunlight.members SET firstName=?, lastName=?, dob=?, email=?, pass=?, highSchool=?, afterGraduation=?, churchName=?, interest1=?, interest2=?, interest3=?, interest4=?, phone=?, orgId=?, adminId=?, eventId=? WHERE memberid=?");
-            preparedStatement.setInt(1, memberIdInput);
-            preparedStatement.setString(2, firstNameInput);
-            preparedStatement.setString(3, lastNameInput);
-            preparedStatement.setString(4, dobInput);
-            preparedStatement.setString(5, emailInput);
-            preparedStatement.setString(6, passInput);
-            preparedStatement.setString(7, highSchoolInput);
-            preparedStatement.setString(8, afterGraduationInput);
-            preparedStatement.setString(9, churchNameInput);
-            preparedStatement.setString(10, interest1Input);
-            preparedStatement.setString(11, interest2Input);
-            preparedStatement.setString(12, interest3Input);
-            preparedStatement.setString(13, interest4Input);
-            preparedStatement.setString(14, phoneInput);
-            preparedStatement.setInt(15, orgIdInput);
-            preparedStatement.setInt(16, adminIdInput);
-            preparedStatement.setInt(17, eventIdInput);
+            preparedStatement.setInt(17, memberIdInput);
+            preparedStatement.setString(1, firstNameInput);
+            preparedStatement.setString(2, lastNameInput);
+            preparedStatement.setString(3, dobInput);
+            preparedStatement.setString(4, emailInput);
+            preparedStatement.setString(5, passInput);
+            preparedStatement.setString(6, highSchoolInput);
+            preparedStatement.setString(7, afterGraduationInput);
+            preparedStatement.setString(8, churchNameInput);
+            preparedStatement.setString(9, interest1Input);
+            preparedStatement.setString(10, interest2Input);
+            preparedStatement.setString(11, interest3Input);
+            preparedStatement.setString(12, interest4Input);
+            preparedStatement.setString(13, phoneInput);
+            preparedStatement.setInt(14, orgIdInput);
+            preparedStatement.setInt(15, adminIdInput);
+            preparedStatement.setInt(16, eventIdInput);
 
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -321,14 +321,16 @@ public class DataHandler {
     public static void updateTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("UPDATE sunlight.tasks SET taskName=?, date=?, description=?, memberid=?, eventId=?, status=?, WHERE taskId=?");
-            ps.setInt(1, taskIdInput);
-            ps.setString(2, taskNameInput);
-            ps.setString(3, taskDateInput);
-            ps.setString(4, taskDescriptionInput);
-            ps.setInt(5, MemberIdInput);
-            ps.setInt(6, EventIdInput);
-            ps.setString(7, taskStatusInput);
+            PreparedStatement ps = conn.prepareStatement("UPDATE sunlight.tasks SET taskName=?, taskdate=?, description=?, memberid=?, eventId=?, status=? WHERE taskId=?");
+            ps.setInt(7, taskIdInput);
+            ps.setString(1, taskNameInput);
+            ps.setString(2, taskDateInput);
+            ps.setString(3, taskDescriptionInput);
+            ps.setInt(4, MemberIdInput);
+            ps.setInt(5, EventIdInput);
+            ps.setString(6, taskStatusInput);
+            ps.executeUpdate();
+            ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
 //End of Update Operations (CRUD)
@@ -381,6 +383,8 @@ public class DataHandler {
             e.printStackTrace();
         }
     }
+
+
 //End of Delete Operations (CRUD)
 
 

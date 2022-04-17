@@ -65,7 +65,31 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>insertTasks</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.insertTasks</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateTasks</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.updateTasks</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteTasks</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.deleteTasks</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>insertTasks</servlet-name>
+        <url-pattern>/insertTasks</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateTasks</servlet-name>
+        <url-pattern>/updateTasks</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteTasks</servlet-name>
+        <url-pattern>/deleteTasks</url-pattern>
+    </servlet-mapping>
 
 
 

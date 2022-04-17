@@ -22,6 +22,8 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for this page -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+
 </head>
 
 <body id="page-top">
@@ -143,10 +145,6 @@
         <ul class="navbar-nav ml-auto">
 
 
-
-
-
-
           <div class="topbar-divider d-none d-sm-block"></div>
 
           <!-- Nav Item - User Information -->
@@ -179,49 +177,20 @@
 
         <!-- Page Heading -->
 
-        <h1 class="text-center text-dark"><b>Tasks</b></h1>
+        <h1 class="display-3 text-center"><b>Tasks</b></h1>
         <div class="row justify-content-center">
           <div class="col-md-10 mb-3">
 
 
             <div class="card shadow mb-4">
-              <div class="card-header py-3">
+              <div class="card-header align-items-end py-3">
+                <i class="fas fa-plus fa-2x" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#addModal"></i>
+
               </div>
               <div class="card-body">
 
 
-
-
-
-
-
-
-<form action="deleteTasks" id="deleteForm" style="display:none;" method="post">
-  <input name="rowToDelete" type="text">
-  <button type="submit">Delete This Row</button>
-</form>
-
-<form action="insertTasks" method="post">
-  <input name="taskIdInput" type="text">
-  <input name="taskNameInput" type="text">
-  <input name="taskDateInput" type="text">
-  <input name="taskDescriptionInput" type="text">
-  <input name="MemberIdInput" type="text">
-  <input name="EventIdInput" type="text">
-  <input name="taskStatusInput" type="text">
-  <button type="submit">Insert This Row</button>
-</form>
-
-<form action="updateTasks" id="updateForm" style="display:none;" method="post">
-  <input name="taskIdInput" type="text">
-  <input name="taskNameInput" type="text">
-  <input name="taskDateInput" type="text">
-  <input name="taskDescriptionInput" type="text">
-  <input name="MemberIdInput" type="text">
-  <input name="EventIdInput" type="text">
-  <input name="taskStatusInput" type="text">
-  <button type="submit">Update This Row</button>
-</form>
+                <!-- Add Event -->
 
 
                 <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
@@ -229,7 +198,7 @@
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="addModalLabel">Add Event</h5>
+                        <h5 class="modal-title" id="addModalLabel">Add Task</h5>
                         <button type="button" class="close" data-dismiss="modal"
                                 aria-label="Close">
                           <span aria-hidden="true">&times;</span>
@@ -238,92 +207,70 @@
                       </div>
                       <div class="modal-body">
 
-                        <form action="insertEvents" id="insertForm" method="post">
+                        <form action="insertTasks" id="insertForm" method="post">
 
                           <div class="form row">
 
                             <div class="form-group col-md-4">
-                              <label class="form-label">Event ID</label>
+                              <label class="form-label">Task ID</label>
 
-                              <input name="eventIdInput" type="text"
-                                     class="form-control form-control-sm">
+                              <input name="taskIdInput" type="text"
+                                     class="form-control form-control-sm taskIdInput" required>
                             </div>
 
 
                             <div class="form-group col-md-4">
-                              <label class="form-label">Event Name</label>
-                              <input name="eventNameInput" type="text"
-                                     class="form-control form-control-sm">
+                              <label class="form-label">Task Name</label>
+                              <input name="taskNameInput" type="text"
+                                     class="form-control form-control-sm taskNameInput" required>
                             </div>
 
 
                             <div class="form-group col-md-4">
-                              <label class="form-label">Event Type</label>
-                              <input name="eventTypeInput" type="text"
-                                     class="form-control form-control-sm">
+                              <label class="form-label">Task Date</label>
+                              <input name="taskDateInput" type="text"
+                                     class="form-control form-control-sm taskDateInput" required>
                             </div>
                           </div>
 
                           <!--                          -->
                           <div class="form row">
 
+                            <div class="form-group col-md-12">
+
+                              <label class="form-label">Description
+                              </label>
+                              <textarea name="taskDescriptionInput" type="text"
+                                        class="form-control form-control-sm taskDescriptionInput" rows="3" required> </textarea>
+                            </div>
+                          </div>
+
+                          <div class="form row">
                             <div class="form-group col-md-4">
 
-                              <label class="form-label">City
+                              <label class="form-label">Member ID
                               </label>
-                              <input name="eventCityInput" type="text"
-                                     class="form-control form-control-sm">
-                            </div>
-
-
-                            <div class="form-group col-md-2">
-
-                              <label class="form-label">State
-                              </label>
-                              <input name="eventStateInput" type="text"
-                                     class="form-control form-control-sm">
+                              <input name="MemberIdInput" type="text"
+                                     class="form-control form-control-sm MemberIdInput" required>
 
                             </div>
 
-                            <div class="form-group col-md-6">
-                              <label class="form-label">Date
+                            <div class="form-group col-md-4">
+                              <label class="form-label">Event ID
                               </label>
-                              <input name="eventDateInput" type="date"
-                                     class="form-control form-control-sm">
+                              <input name="EventIdInput" type="text"
+                                     class="form-control form-control-sm EventIdInput" required>
 
                             </div>
-                          </div>
-
-                          <div class="form row">
-
-                            <div class="form-group col-md-6 ml-auto
-">
-                              <label class="form-label">Interest 1
+                            <div class="form-group col-md-4">
+                              <label class="form-label">Status
                               </label>
-                              <input name="interest1Input" type="text"
-                                     class="form-control form-control-sm">
-                            </div>
-                            <div class="form-group col-md-6 ml-auto
-">
-                              <label class="form-label">Interest 2
-                              </label>
-                              <input name="interest2Input" type="text"
-                                     class="form-control form-control-sm">
-                            </div>
-                          </div>
-
-                          <div class="form row">
-                            <div class="form-group col-md-6">
-                              <label class="form-label">Interest 3
-                              </label>
-                              <input name="interest3Input" type="text"
-                                     class="form-control form-control-sm">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label class="form-label">Interest 4
-                              </label>
-                              <input name="interest4Input" type="text"
-                                     class="form-control form-control-sm">
+                              <select name="taskStatusInput" type="text"
+                                      class="form-control form-control-sm taskStatusInput" required>
+                                <option>Active</option>
+                                <option>Completed</option>
+                                <option>Canceled</option>
+                              </select>
                             </div>
                           </div>
 
@@ -332,7 +279,7 @@
                                     data-dismiss="modal">Cancel
                             </button>
 
-                            <button type="submit" class="btn btn-primary">Insert New Event
+                            <button type="submit" class="btn btn-primary">Insert New Task
                             </button>
                           </div>
                         </form>
@@ -342,22 +289,22 @@
                 </div>
 
 
-                <div class="table-responsive">
-                  <table id="eventsTable"
+                <div>
+                  <table id="taskTable"
                          class="display"
                          style="width:100%"
 
 
                   >
                     <thead>
-                    <tr class="tr-class-1">
-                      <th  data-valign="middle">Task ID</th>
-                      <th  data-valign="middle">Task Name</th>
-                      <th  data-valign="middle">Task Date</th>
-                      <th  data-valign="middle">Member ID</th>
-                      <th data-valign="middle">Event ID</th>
-                      <th  data-valign="middle">Description</th>
-                      <th  data-valign="middle">Status</th>
+                    <tr >
+                      <th>Task ID</th>
+                      <th>Task Name</th>
+                      <th>Task Date</th>
+                      <th>Description</th>
+                      <th>Member ID</th>
+                      <th>Event ID</th>
+                      <th>Status</th>
                       <th class="text-center">Actions</th>
 
                     </tr>
@@ -365,49 +312,181 @@
                     </thead>
                     <tbody>
 
+                    <% Vector<tasksTable> v = DataHandler.getTasks();
+                      for (tasksTable c : v) {
+                    %>
 
-  <% Vector<tasksTable> v = DataHandler.getTasks();
-    for (tasksTable c : v) {
-  %>
+                    <tr>
+                      <td class="task-id"><%= String.valueOf(c.getTaskId())%></td>
+                      <td class="task-name"><%= String.valueOf(c.getTaskName())%></td>
+                      <td class="task-date"><%= String.valueOf(c.getTaskDate())%></td>
+                      <td class="desc"><%= String.valueOf(c.getDescription())%></td>
+                      <td class="memb-id"><%= String.valueOf(c.getMemberid())%></td>
+                      <td class="event-id"><%= String.valueOf(c.getEventId())%></td>
+                      <td class="stat"><%= String.valueOf(c.getStatus())%></td>
+                      <td>
 
-  <tr>
-    <td><%= String.valueOf(c.getTaskId())%></td>
-    <td><%= String.valueOf(c.getTaskName())%></td>
-    <td><%= String.valueOf(c.getTaskDate())%></td>
-    <td><%= String.valueOf(c.getDescription())%></td>
-    <td><%= String.valueOf(c.getMemberid())%></td>
-    <td><%= String.valueOf(c.getEventId())%></td>
-    <td><%= String.valueOf(c.getStatus())%></td>
+                        <span style="padding-left:20px;">        </span>
 
-  </tr>
+                        <i class="fas fa-trash delete_task" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
 
-  <%
-    }
-  %>
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                             aria-labelledby="deleteModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Delete Task</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="deleteTasks" method="post">
+                                  <div class="form-group">
+                                    <label class="col-form-label">Event
+                                      ID:</label>
+                                    <input name="taskIdDelete" type="text" class="form-control taskIdDelete" readonly required>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Delete
+                                      Task
+                                    </button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <span style="padding-left:20px;">        </span>
+
+
+                        <i class="fas fa-edit update_task" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#updateModal"></i>
+
+
+                        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
+                             aria-labelledby="updateModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="updateModalLabel">Update Task</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                </button>
+                              </div>
+                              <div class="modal-body">
+
+                                <form action="updateTasks" id="updateForm" method="post">
+
+                                  <div class="form row">
+
+                                    <div class="form-group col-md-4">
+                                      <label class="form-label">Task ID</label>
+
+                                      <input name="taskIdInput" type="text"
+                                             class="form-control form-control-sm taskIdInput" required readonly>
+                                    </div>
+
+
+                                    <div class="form-group col-md-4">
+                                      <label class="form-label">Task Name</label>
+                                      <input name="taskNameInput" type="text"
+                                             class="form-control form-control-sm taskNameInput" required>
+                                    </div>
+
+
+                                    <div class="form-group col-md-4">
+                                      <label class="form-label">Task Date</label>
+                                      <input name="taskDateInput" type="text"
+                                             class="form-control form-control-sm taskDateInput" required>
+                                    </div>
+                                  </div>
+
+                                  <!--                          -->
+                                  <div class="form row">
+
+                                    <div class="form-group col-md-12">
+
+                                      <label class="form-label">Description
+                                      </label>
+                                      <textarea name="taskDescriptionInput" type="text"
+                                                class="form-control form-control-sm taskDescriptionInput" rows="3" required> </textarea>
+                                    </div>
+                                  </div>
+
+                                    <div class="form row">
+                                    <div class="form-group col-md-4">
+
+                                      <label class="form-label">Member ID
+                                      </label>
+                                      <input name="MemberIdInput" type="text"
+                                             class="form-control form-control-sm MemberIdInput" required>
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                      <label class="form-label">Event ID
+                                      </label>
+                                      <input name="EventIdInput" type="text"
+                                             class="form-control form-control-sm EventIdInput" required>
+
+                                    </div>
+                                      <div class="form-group col-md-4">
+                                        <label class="form-label">Status
+                                        </label>
+                                        <select name="taskStatusInput" type="text"
+                                               class="form-control form-control-sm taskStatusInput" required>
+                                          <option>Active</option>
+                                          <option>Completed</option>
+                                          <option>Canceled</option>
+                                        </select>
+                                      </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancel
+                                    </button>
+
+                                    <button type="submit" class="btn btn-primary">Update Task
+                                    </button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                    </tr>
+                    <% } %>
                     </tbody>
                     <tfoot>
                     <tr>
                       <th>Task ID</th>
                       <th>Task Name</th>
                       <th>Task Date</th>
+                      <th>Description</th>
                       <th>Member ID</th>
                       <th>Event ID</th>
-                      <th>Description</th>
                       <th>Status</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     </tfoot>
-</table>
+                  </table>
+                </div>
               </div>
+
             </div>
           </div>
 
+
         </div>
       </div>
-
-
-
-
 
 
       <!-- /.container-fluid -->
@@ -469,6 +548,8 @@
 
 <!-- Page level plugins -->
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
@@ -477,6 +558,74 @@
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 
+<script>
+
+  $(document).ready( function () {
+    $('#taskTable').DataTable();
+  } );
+
+
+  $(function() {
+
+    $(document).ready(function() {
+      $('.delete_task').hover(function () {
+        $tr = $(this).closest('tr');
+      })
+    })
+
+    var deleteModal = document.getElementById('deleteModal')
+    deleteModal.addEventListener('show.bs.modal', function () {
+
+      var modalTitle = deleteModal.querySelector('.modal-title')
+      var modalBodyInput = deleteModal.querySelector('.taskIdDelete')
+
+      modalTitle.textContent = 'Delete Task ' + $('.task-id',$tr).text() +'?'
+      modalBodyInput.value = $('.task-id',$tr).text()
+
+
+    })
+  })
+
+  $(function() {
+
+    $(document).ready(function() {
+      $('.update_task').hover(function () {
+        $tr = $(this).closest('tr');
+      })
+    })
+
+    var updateModal = document.getElementById('updateModal')
+    updateModal.addEventListener('show.bs.modal', function () {
+
+      var modalTitle = updateModal.querySelector('.modal-title')
+      var modalIDInput = updateModal.querySelector('.taskIdInput')
+      var modalnameInput = updateModal.querySelector('.taskNameInput')
+      var modeldateInput = updateModal.querySelector('.taskDateInput')
+      var modaldescInput = updateModal.querySelector('.taskDescriptionInput')
+      var modalmemInput = updateModal.querySelector('.MemberIdInput')
+      var modaleventnput = updateModal.querySelector('.EventIdInput')
+      var modalstatInput = updateModal.querySelector('.taskStatusInput')
+
+
+
+      modalTitle.textContent = 'Update Task ' + $('.task-id',$tr).text() +'?'
+      modalIDInput.value = $('.task-id',$tr).text()
+      modalnameInput.value = $('.task-name',$tr).text()
+      modeldateInput.value = $('.task-date',$tr).text()
+      modaldescInput.value = $('.desc',$tr).text()
+      modalmemInput.value = $('.memb-id',$tr).text()
+      modaleventnput.value = $('.event-id',$tr).text()
+      modalstatInput.value = $('.stat',$tr).text()
+
+
+
+
+
+    })
+  })
+
+
+</script>
 </body>
 
 </html>
