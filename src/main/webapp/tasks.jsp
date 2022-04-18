@@ -342,7 +342,7 @@
                               <div class="modal-body">
                                 <form action="deleteTasks" method="post">
                                   <div class="form-group">
-                                    <label class="col-form-label">Event
+                                    <label class="col-form-label">Task
                                       ID:</label>
                                     <input name="taskIdDelete" type="text" class="form-control taskIdDelete" readonly required>
                                   </div>

@@ -27,7 +27,7 @@
 
 <body>
 <div class="bg-image"
-     style="background-image: url(images/background.jpg); background-size: cover; height: 100vh">
+     style="background-image: url(images/background1.jpg); background-size: cover; height: 100vh">
     <div class="container">
         <div class="row align-items-center vh-100">
             <div class="col-5 mx-auto">
