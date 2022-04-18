@@ -24,6 +24,11 @@ public class studentOrgTable {
         this.interest4 = interest4;
     }
 
+    public studentOrgTable(String orgName, int orgId) {
+        this.orgId = orgId;
+        this.orgName = orgName;
+    }
+
 
     public int getOrgId() {
         return orgId;

@@ -22,7 +22,16 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link id="pagestyle" href="../assets/css/argon-dashboard.css" rel="stylesheet" />
+    <style>html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+    }</style>
 </head>
+
 
 <body id="page-top">
 
@@ -60,8 +69,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link" href="events.jsp">
                 <i class="fas fa-fw fa-calendar-alt"></i>
                 <span>Events</span>
             </a>
@@ -77,23 +85,13 @@
 
         <!-- Nav Item - Tasks -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link " href="tasks.jsp">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Tasks</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Options:</h6>
-                    <a class="collapse-item" href="tasks.jsp">Task List</a>
-                    <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-                </div>
-            </div>
-        </li>
 
-        <!-- Nav Item - Requests -->
+            <!-- Nav Item - Requests -->
         <li class="nav-item">
             <a class="nav-link" href="requests.jsp">
                 <i class="fas fa-fw fa-table"></i>
@@ -188,42 +186,33 @@
                             <div class="card-header py-3">
                             </div>
                             <div class="card-body">
-<table>
-    <tr>
 
-        <th>Event Schedule ID</th>
-        <th>Event ID</th>
-        <th>Member ID</th>
-        <th>Event Name</th>
-        <th>Event Type</th>
-    </tr>
 
     <% Vector<eventScheduleTable> v = DataHandler.getEventSchedule();
         for (eventScheduleTable c : v) {
     %>
 
-    <tr>
-        <td><%= String.valueOf(c.getEventScheduleId())%></td>
-        <td><%= String.valueOf(c.getEventId())%></td>
-        <td><%= String.valueOf(c.getMemberid())%></td>
-        <td><%= String.valueOf(c.getEventName())%></td>
-        <td><%= String.valueOf(c.getEventType())%></td>
-    </tr>
-
-    <%
-        }
-    %>
-
-</table>
 
 
-            <div id="dp"></div>
-            <script type="text/javascript">
-                const dp = new DayPilot.Calendar("dp", {
-                    viewType: "Week"
-                });
-                dp.init();
-            </script>
+
+
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action ">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1"><td><%= String.valueOf(c.getEventName())%></td>
+                                            </h5>
+                                            <small>Event Schedule ID:<%= String.valueOf(c.getEventScheduleId())%></small>
+                                        </div>
+                                        <p class="mb-1"><td><%= String.valueOf(c.getEventType())%></td></p>
+                                        <small>Event ID:<%= String.valueOf(c.getEventId())%></small> <small>Member ID:<%= String.valueOf(c.getMemberid())%></small>
+                                    </a>
+
+                                    <%
+                                        }
+                                    %>
+
+                                </div>
+
 
 
 

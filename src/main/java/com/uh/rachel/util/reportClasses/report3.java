@@ -12,30 +12,30 @@ public class report3 {
     requestsTable requestsPackage;
     studentOrgTable studentOrgPackage;
 
-    public report3(membersTable membersPackage, requestsTable requestsPackage, studentOrgTable studentOrgPackage) {
+    public report3(requestsTable requestsPackage, membersTable membersPackage,studentOrgTable studentOrgPackage) {
         this.membersPackage = membersPackage;
         this.requestsPackage = requestsPackage;
         this.studentOrgPackage = studentOrgPackage;
     }
 
-    public membersTable getMembersPackage() {
-        return membersPackage;
-    }
 
     public requestsTable getRequestsPackage() {
         return requestsPackage;
     }
-
+    public membersTable getMembersPackage() {
+        return membersPackage;
+    }
     public studentOrgTable getStudentOrgPackage() {
         return studentOrgPackage;
     }
 
-    public void setMembersPackage(membersTable membersPackage) {
-        this.membersPackage = membersPackage;
-    }
+
 
     public void setRequestsPackage(requestsTable requestsPackage) {
         this.requestsPackage = requestsPackage;
+    }
+    public void setMembersPackage(membersTable membersPackage) {
+        this.membersPackage = membersPackage;
     }
 
     public void setStudentOrgPackage(studentOrgTable studentOrgPackage) {

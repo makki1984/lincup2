@@ -1,5 +1,6 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
+<%@ page import="com.uh.rachel.util.tableClasses.eventScheduleTable" %>
 <%@ page import="com.uh.rachel.util.reportClasses.report3" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -32,10 +33,16 @@
     #calendar {
         max-width: 1100px;
         margin: 40px auto;
-    }</style>
+    }
+
+    .scroll {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    </style>
 </head>
 
-<div id="page-top">
+<body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -71,8 +78,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link" href="events.jsp">
                 <i class="fas fa-fw fa-calendar-alt"></i>
                 <span>Events</span>
             </a>
@@ -88,21 +94,11 @@
 
         <!-- Nav Item - Tasks -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link " href="tasks.jsp">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Tasks</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Options:</h6>
-                    <a class="collapse-item" href="tasks.jsp">Task List</a>
-                    <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-                </div>
-            </div>
-        </li>
 
         <!-- Nav Item - Requests -->
         <li class="nav-item">
@@ -206,73 +202,81 @@
                             <small class="text-muted">Last updated 3 mins ago</small>
                         </div>
                     </div>
+
+
+
                     <div class="card">
-                        <img class="card-img-top" src="https://image.freepik.com/free-vector/colleagues-working-together-project_74855-6308.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="https://media.istockphoto.com/vectors/smart-working-and-video-conference-online-working-with-colleagues-vector-id1223224911?k=20&m=1223224911&s=612x612&w=0&h=FKQblZJVf68C7Fr7P8SgujrsplrD8_5PnjUOsZGLWUc=" alt="Card image cap">
+
                         <div class="card-body">
-                            <h5 class="card-title">Recent Requests</h5>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small>3 days ago</small>
+</br>
+                            <h5 class="card-title">Active Requests</h5>
+
+
+                            <ol class="list-group scroll list-group-numbered">
+                                <% Vector<report3> a = DataHandler.getReport3();
+                                    for (report3 c : a) {
+                                %>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold"><%= String.valueOf(c.getMembersPackage().getFirstName())%> <%= String.valueOf(c.getMembersPackage().getLastName())%></div>
+                                        <%= String.valueOf(c.getStudentOrgPackage().getOrgName())%>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Donec id elit non mi porta.</small>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <span class="badge badge-primary">Request ID: <%= String.valueOf(c.getRequestsPackage().getRequestId())%></span>
+
+                                </li>
+                                <%
+                                    }
+                                %>
+                            </ol>
+
+
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                    </div>
+
+                    <div class="card ">
+
+                        <div class="card-body ">
+                            <h5 class="card-title">Events</h5>
+
+                            <div class="list-group scroll ">
+                                <% Vector<eventScheduleTable> v = DataHandler.getEventSchedule();
+                                    for (eventScheduleTable c : v) {
+                                %>
+                                <ul class="list-group-item list-group-item-action">
+
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small class="text-muted">3 days ago</small>
+                                        <h5 class="mb-1"><td><%= String.valueOf(c.getEventName())%></td>
+                                        </h5>
+                                        <small>Event Schedule ID:<%= String.valueOf(c.getEventScheduleId())%></small>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small class="text-muted">Donec id elit non mi porta.</small>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small class="text-muted">3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small class="text-muted">Donec id elit non mi porta.</small>
-                                </a>
+                                    <p class="mb-1"><td><%= String.valueOf(c.getEventType())%></td></p>
+                                    <small>Event ID:<%= String.valueOf(c.getEventId())%></small> <small>Member ID:<%= String.valueOf(c.getMemberid())%></small>
+
+
+                                </ul>
+                                <%
+                                    }
+                                %>
+
                             </div>
+                            <img class="card-img-bottom" src="https://image.freepik.com/free-vector/colleagues-working-together-project_74855-6308.jpg" alt="Card image cap">
 
                         </div>
+
                         <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Inspiring Quotes</h5>
-                        </br>
-                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1578909195669-6890bd797898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1617251137884-f135eccf6942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1542904990-579199bba13a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=713&q=80" alt="Third slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1471400974796-1c823d00a96f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Third slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://images.unsplash.com/photo-1542271484-f163235efa6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Third slide">
-                                    </div>
-                                </div>
-                            </div>                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 2 mins ago</small>
-                        </div>
-                    </div>
+
+
+
                 </div>
-                </br>
 
-            </div>
+
+</br>
+</div>
 
 
 
@@ -302,26 +306,6 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="Logout">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -350,6 +334,6 @@
     });
 
 </script>
-</body>
 
+</body>
 </html>

@@ -23,8 +23,14 @@
   <!-- Custom styles for this page -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
-
+  <style>html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }</style>
 </head>
+
 
 <body id="page-top">
 
@@ -62,8 +68,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
+      <a class="nav-link" href="events.jsp">
         <i class="fas fa-fw fa-calendar-alt"></i>
         <span>Events</span>
       </a>
@@ -79,23 +84,13 @@
 
     <!-- Nav Item - Tasks -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-         aria-expanded="true" aria-controls="collapseUtilities">
+      <a class="nav-link " href="tasks.jsp">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Tasks</span>
       </a>
-      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-           data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Options:</h6>
-          <a class="collapse-item" href="tasks.jsp">Task List</a>
-          <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-        </div>
-      </div>
-    </li>
 
-    <!-- Nav Item - Requests -->
+      <!-- Nav Item - Requests -->
     <li class="nav-item">
       <a class="nav-link" href="requests.jsp">
         <i class="fas fa-fw fa-table"></i>
@@ -145,6 +140,10 @@
         <ul class="navbar-nav ml-auto">
 
 
+
+
+
+
           <div class="topbar-divider d-none d-sm-block"></div>
 
           <!-- Nav Item - User Information -->
@@ -177,7 +176,7 @@
 
         <!-- Page Heading -->
 
-        <h1 class="display-3 text-center"><b>Tasks</b></h1>
+        <h1 class="text-center text-dark"><b>Tasks</b></h1>
         <div class="row justify-content-center">
           <div class="col-md-10 mb-3">
 
@@ -241,7 +240,7 @@
                               <label class="form-label">Description
                               </label>
                               <textarea name="taskDescriptionInput" type="text"
-                                        class="form-control form-control-sm taskDescriptionInput" rows="3" required> </textarea>
+                                        class="form-control form-control-sm taskDescriptionInput" rows="3" required></textarea>
                             </div>
                           </div>
 

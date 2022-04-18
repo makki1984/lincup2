@@ -1,6 +1,7 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.requestsTable" %>
+<%@ page import="com.uh.rachel.util.reportClasses.report3" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +22,16 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <!-- Custom styles for this page -->
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+  <style>html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }</style>
 </head>
+
 
 <body id="page-top">
 
@@ -60,8 +69,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
+      <a class="nav-link" href="events.jsp">
         <i class="fas fa-fw fa-calendar-alt"></i>
         <span>Events</span>
       </a>
@@ -77,23 +85,13 @@
 
     <!-- Nav Item - Tasks -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-         aria-expanded="true" aria-controls="collapseUtilities">
+      <a class="nav-link " href="tasks.jsp">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Tasks</span>
       </a>
-      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-           data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Options:</h6>
-          <a class="collapse-item" href="tasks.jsp">Task List</a>
-          <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-        </div>
-      </div>
-    </li>
 
-    <!-- Nav Item - Requests -->
+      <!-- Nav Item - Requests -->
     <li class="nav-item">
       <a class="nav-link" href="requests.jsp">
         <i class="fas fa-fw fa-table"></i>
@@ -189,27 +187,49 @@
               </div>
               <div class="card-body">
 
-<table>
+
+
+<table id="Table"
+       class="display"
+       style="width:100%">
+  <thead>
   <tr>
     <th>Request ID</th>
-    <th>Org ID</th>
     <th>Member ID</th>
+    <th colspan="2">Member Name</th>
+    <th>Org ID</th>
+    <th>Org Name</th>
+
+
   </tr>
 
-  <% Vector<requestsTable> v = DataHandler.getRequestsTable();
-    for (requestsTable c : v) {
-  %>
+  </thead>
+  <tbody>
+                  <% Vector<report3> v = DataHandler.getReport3();
+                    for (report3 c : v) {
+                  %>
+                  <tr>
+                    <td><%= String.valueOf(c.getRequestsPackage().getRequestId())%> </td>
+                    <td><%= String.valueOf(c.getMembersPackage().getMemberid())%></td>
+                    <td><%= String.valueOf(c.getMembersPackage().getFirstName())%> </td>
+                    <td><%= String.valueOf(c.getMembersPackage().getLastName())%> </td>
+                    <td><%= String.valueOf(c.getStudentOrgPackage().getOrgId())%> </td>
+                    <td><%= String.valueOf(c.getStudentOrgPackage().getOrgName())%> </td>
 
+                  </tr>
+                  <%
+                    }
+                  %>
+  </tbody>
+  <tfoot>
   <tr>
-    <td><%= String.valueOf(c.getRequestId())%></td>
-    <td><%= String.valueOf(c.getOrgId())%></td>
-    <td><%= String.valueOf(c.getMemberid())%></td>
+    <th>Request ID</th>
+    <th>Member ID</th>
+    <th colspan="2">Member Name</th>
+    <th>Org ID</th>
+    <th>Org Name</th>
   </tr>
-
-  <%
-    }
-  %>
-
+  </tfoot>
 </table>
               </div>
             </div>
@@ -270,6 +290,7 @@
   </div>
 </div>
 
+
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -288,6 +309,14 @@
 
 <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+
+  $(document).ready( function () {
+    $('#Table').DataTable();
+  } )
+</script>
 </body>
 
 </html>

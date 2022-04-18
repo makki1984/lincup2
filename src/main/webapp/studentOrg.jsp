@@ -2,6 +2,8 @@
 <%@ page import="com.uh.rachel.util.tableClasses.studentOrgTable" %>
 <%@ page import="java.util.Vector" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.uh.rachel.util.reportClasses.report3" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +22,32 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <style>
+
+
+    h1 {
+        color: #fff;
+        padding: 10px 0;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border: none;
+    }
+    .text-muted i {
+        margin: 0 10px;
+    }
+
+ html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+    }</style>
 </head>
+
 
 <body id="page-top">
 
@@ -59,8 +85,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link" href="events.jsp">
                 <i class="fas fa-fw fa-calendar-alt"></i>
                 <span>Events</span>
             </a>
@@ -76,23 +101,13 @@
 
         <!-- Nav Item - Tasks -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link " href="tasks.jsp">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Tasks</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Options:</h6>
-                    <a class="collapse-item" href="tasks.jsp">Task List</a>
-                    <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-                </div>
-            </div>
-        </li>
 
-        <!-- Nav Item - Requests -->
+            <!-- Nav Item - Requests -->
         <li class="nav-item">
             <a class="nav-link" href="requests.jsp">
                 <i class="fas fa-fw fa-table"></i>
@@ -185,46 +200,49 @@
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
+
                             </div>
                             <div class="card-body">
 
-<table>
-    <tr>
-        <th>Org ID</th>
-        <th>City</th>
-        <th>State</th>
-        <th>University</th>
-        <th>Org Name</th>
-        <th>Interest 1</th>
-        <th>Interest 2</th>
-        <th>Interest 3</th>
-        <th>Interest 4</th>
-    </tr>
 
-    <% Vector<studentOrgTable> v = DataHandler.getStudentOrg();
-        for (studentOrgTable c : v) {
-    %>
 
-    <tr>
-        <td><%= String.valueOf(c.getOrgId())%></td>
-        <td><%= String.valueOf(c.getCity())%></td>
-        <td><%= String.valueOf(c.getState())%></td>
-        <td><%= String.valueOf(c.getUniversity())%></td>
-        <td><%= String.valueOf(c.getOrgName())%></td>
-        <td><%= String.valueOf(c.getInterest1())%></td>
-        <td><%= String.valueOf(c.getInterest2())%></td>
-        <td><%= String.valueOf(c.getInterest3())%></td>
-        <td><%= String.valueOf(c.getInterest4())%></td>
 
-    <%
-        }
-    %>
 
-</table>
+            <div class="container">
+                <div class="card-columns">
+                    <% Vector<studentOrgTable> v = DataHandler.getStudentOrg();
+                        for (studentOrgTable c : v) {
+                    %>
+                    <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"><%= String.valueOf(c.getOrgName())%>
+                                </h4>
+                                <p class="card-text">
+
+
+                                <%= String.valueOf(c.getInterest1())%>,
+                                <%= String.valueOf(c.getInterest2())%>,
+                                <%= String.valueOf(c.getInterest3())%>,
+                                <%= String.valueOf(c.getInterest4())%>
+                                </p>
+                                <p class="card-text"><small class="text-muted">Org ID:<%= String.valueOf(c.getOrgId())%>
+                                    <i class="fas fa-city"></i><%= String.valueOf(c.getCity())%>,<%= String.valueOf(c.getState())%><i class="fas fa-school"></i><%= String.valueOf(c.getUniversity())%></small></p>
                             </div>
-                        </div>
+                        </a>
                     </div>
+                    <%
+                        }
+                    %>
 
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -274,7 +292,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="login.jsp">Logout</a>
             </div>
         </div>
     </div>
@@ -291,11 +309,23 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+    $(document).ready( function () {
+        $('#Table').DataTable();
+    } );
+</script>
 
 
 </body>

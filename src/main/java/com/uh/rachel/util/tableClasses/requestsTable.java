@@ -13,6 +13,10 @@ public class requestsTable {
         this.memberid = memberid;
     }
 
+    public requestsTable(int requestId) {
+        this.requestId = requestId;
+    }
+
 
     public int getRequestId() {
         return requestId;

@@ -233,7 +233,7 @@ public class DataHandler {
     public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, taskDescription, memberid, eventId, taskStatus) VALUES(?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, description, memberid, eventId, taskStatus) VALUES(?, ?, ?, ?, ?, ?, ?)");
             ps.setInt(1, taskIdInput);
             ps.setString(2, taskNameInput);
             ps.setString(3, taskDateInput);
@@ -387,7 +387,27 @@ public class DataHandler {
 
 //End of Delete Operations (CRUD)
 
+    public static Vector<report3> getReport3() {
+        Vector<report3> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM requests JOIN members ON requests.memberid = members.memberid join studentOrg ON requests.orgId = studentOrg.orgId ");
+            ResultSet result = statement.executeQuery();
 
+            while (result.next()) {
+                v.add(new report3(
+                        new requestsTable(result.getInt("requestId")),
+                        new membersTable(result.getInt("memberid"),
+                        result.getString("firstname"),
+                        result.getString("lastname")),
+                        new studentOrgTable(result.getString("orgName"),
+                        result.getInt("orgId"))));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
 
 
 

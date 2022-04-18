@@ -45,6 +45,14 @@ public class membersTable {
 
     }
 
+    public membersTable(int memberid, String firstName, String lastName) {
+
+        this.memberid = memberid;
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+    }
+
     public int getMemberid() {
         return memberid;
     }

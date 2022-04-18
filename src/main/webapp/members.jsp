@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LINCUP - Events</title>
+    <title>LINCUP - Members</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,7 +24,14 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <style>html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+    }</style>
 </head>
+
 
 <body id="page-top">
 
@@ -62,8 +69,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link" href="events.jsp">
                 <i class="fas fa-fw fa-calendar-alt"></i>
                 <span>Events</span>
             </a>
@@ -79,23 +85,13 @@
 
         <!-- Nav Item - Tasks -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link " href="tasks.jsp">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Tasks</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Options:</h6>
-                    <a class="collapse-item" href="tasks.jsp">Task List</a>
-                    <a class="collapse-item" href="tasksSteps.jsp">Task Steps</a>
 
-                </div>
-            </div>
-        </li>
 
-        <!-- Nav Item - Requests -->
+            <!-- Nav Item - Requests -->
         <li class="nav-item">
             <a class="nav-link" href="requests.jsp">
                 <i class="fas fa-fw fa-table"></i>
@@ -311,9 +307,8 @@
 
                                 <div style="width: 100%">
                                     <table id="membersTable"
-                                           class="display table-responsive"
-
-
+                                           class="display"
+style="width: 100%"
 
                                     >
                                         <thead>
@@ -343,7 +338,8 @@
                                         %>
 
                                         <tr>
-                                            <td class="member-id"><%= String.valueOf(c.getMemberid())%></td>
+                                            <td class="member-id"><%= String.valueOf(c.getMemberid())%>
+                                            </td>
                                             <td class="member-first"><%= String.valueOf(c.getFirstName())%>
                                             </td>
                                             <td class="member-last"><%= String.valueOf(c.getLastName())%>
@@ -380,15 +376,18 @@
 
                                                 <span style="padding-left:10px;">        </span>
 
-                                                <i class="fas fa-trash delete_member" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
+                                                <i class="fas fa-trash delete_member" style="color: royalblue"
+                                                   data-bs-toggle="modal" data-bs-target="#deleteModal"></i>
 
                                                 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
                                                      aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteModalLabel">Delete Member</h5>
-                                                                <button type="button" class="close" data-bs-dismiss="modal"
+                                                                <h5 class="modal-title" id="deleteModalLabel">Delete
+                                                                    Member</h5>
+                                                                <button type="button" class="close"
+                                                                        data-bs-dismiss="modal"
                                                                         aria-label="Close">
                                                                 </button>
                                                             </div>
@@ -397,14 +396,17 @@
                                                                     <div class="form-group">
                                                                         <label class="col-form-label">Member
                                                                             ID:</label>
-                                                                        <input name="rowToDelete" type="text" class="form-control rowToDelete" readonly required>
+                                                                        <input name="rowToDelete" type="text"
+                                                                               class="form-control rowToDelete" readonly
+                                                                               required>
                                                                     </div>
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                                 data-bs-dismiss="modal">Cancel
                                                                         </button>
-                                                                        <button type="submit" class="btn btn-primary">Delete
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            Delete
                                                                             Member
                                                                         </button>
                                                                     </div>
@@ -417,7 +419,8 @@
                                                 <span style="padding-left:20px;">        </span>
 
 
-                                                <i class="fas fa-edit update_member" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#updateModal"></i>
+                                                <i class="fas fa-edit update_member" style="color: royalblue"
+                                                   data-bs-toggle="modal" data-bs-target="#updateModal"></i>
 
 
                                                 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
@@ -425,14 +428,17 @@
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="updateModalLabel">Update Member</h5>
-                                                                <button type="button" class="close" data-bs-dismiss="modal"
+                                                                <h5 class="modal-title" id="updateModalLabel">Update
+                                                                    Member</h5>
+                                                                <button type="button" class="close"
+                                                                        data-bs-dismiss="modal"
                                                                         aria-label="Close">
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
 
-                                                                <form action="updateMembers" id="updateForm" method="post">
+                                                                <form action="updateMembers" id="updateForm"
+                                                                      method="post">
 
                                                                     <div class="form row">
 
@@ -440,21 +446,23 @@
                                                                             <label class="form-label">Member ID</label>
 
                                                                             <input name="memberIdInput" type="text"
-                                                                                   class="form-control form-control-sm memberIdInput" required readonly>
-                                                                        </div>
+                                                                                   class="form-control form-control-sm memberIdInput"
+                                                                                   required readonly></div>
 
 
                                                                         <div class="form-group col-md-4">
                                                                             <label class="form-label">First Name</label>
                                                                             <input name="firstNameInput" type="text"
-                                                                                   class="form-control form-control-sm firstNameInput" required>
+                                                                                   class="form-control form-control-sm firstNameInput"
+                                                                                   required>
                                                                         </div>
 
 
                                                                         <div class="form-group col-md-4">
                                                                             <label class="form-label">Last Name</label>
                                                                             <input name="lastNameInput" type="text"
-                                                                                   class="form-control form-control-sm lastNameInput" required>
+                                                                                   class="form-control form-control-sm lastNameInput"
+                                                                                   required>
                                                                         </div>
                                                                     </div>
 
@@ -466,7 +474,8 @@
                                                                             <label class="form-label">DOB
                                                                             </label>
                                                                             <input name="dobInput" type="text"
-                                                                                   class="form-control form-control-sm dobInput" required>
+                                                                                   class="form-control form-control-sm dobInput"
+                                                                                   required>
                                                                         </div>
 
 
@@ -475,7 +484,8 @@
                                                                             <label class="form-label">Email
                                                                             </label>
                                                                             <input name="emailInput" type="text"
-                                                                                   class="form-control form-control-sm emailInput" required>
+                                                                                   class="form-control form-control-sm emailInput"
+                                                                                   required>
 
                                                                         </div>
 
@@ -483,7 +493,8 @@
                                                                             <label class="form-label">Password
                                                                             </label>
                                                                             <input name="passInput" type="text"
-                                                                                   class="form-control form-control-sm passInput" required>
+                                                                                   class="form-control form-control-sm passInput"
+                                                                                   required>
 
                                                                         </div>
                                                                     </div>
@@ -495,7 +506,8 @@
                                                                             <label class="form-label">High School
                                                                             </label>
                                                                             <input name="highSchoolInput" type="text"
-                                                                                   class="form-control form-control-sm highSchoolInput" required>
+                                                                                   class="form-control form-control-sm highSchoolInput"
+                                                                                   required>
                                                                         </div>
 
 
@@ -503,8 +515,10 @@
 
                                                                             <label class="form-label">After Graduation
                                                                             </label>
-                                                                            <input name="afterGraduationInput" type="text"
-                                                                                   class="form-control form-control-sm afterGraduationInput" required>
+                                                                            <input name="afterGraduationInput"
+                                                                                   type="text"
+                                                                                   class="form-control form-control-sm afterGraduationInput"
+                                                                                   required>
 
                                                                         </div>
 
@@ -512,7 +526,8 @@
                                                                             <label class="form-label">Church
                                                                             </label>
                                                                             <input name="churchNameInput" type="text"
-                                                                                   class="form-control form-control-sm churchNameInput" required>
+                                                                                   class="form-control form-control-sm churchNameInput"
+                                                                                   required>
 
                                                                         </div>
                                                                     </div>
@@ -524,14 +539,16 @@
                                                                             <label class="form-label">Interest 1
                                                                             </label>
                                                                             <input name="interest1Input" type="text"
-                                                                                   class="form-control form-control-sm interest1Input" required>
+                                                                                   class="form-control form-control-sm interest1Input"
+                                                                                   required>
                                                                         </div>
                                                                         <div class="form-group col-md-6 ml-auto
 ">
                                                                             <label class="form-label">Interest 2
                                                                             </label>
                                                                             <input name="interest2Input" type="text"
-                                                                                   class="form-control form-control-sm interest2Input" required>
+                                                                                   class="form-control form-control-sm interest2Input"
+                                                                                   required>
                                                                         </div>
                                                                     </div>
 
@@ -540,13 +557,15 @@
                                                                             <label class="form-label">Interest 3
                                                                             </label>
                                                                             <input name="interest3Input" type="text"
-                                                                                   class="form-control form-control-sm interest3Input" required>
+                                                                                   class="form-control form-control-sm interest3Input"
+                                                                                   required>
                                                                         </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Interest 4
                                                                             </label>
                                                                             <input name="interest4Input" type="text"
-                                                                                   class="form-control form-control-sm interest4Input" required>
+                                                                                   class="form-control form-control-sm interest4Input"
+                                                                                   required>
                                                                         </div>
                                                                     </div>
 
@@ -557,7 +576,8 @@
                                                                             <label class="form-label">Phone
                                                                             </label>
                                                                             <input name="phoneInput" type="text"
-                                                                                   class="form-control form-control-sm phoneInput" required>
+                                                                                   class="form-control form-control-sm phoneInput"
+                                                                                   required>
                                                                         </div>
 
 
@@ -566,7 +586,8 @@
                                                                             <label class="form-label">Org ID
                                                                             </label>
                                                                             <input name="orgIdInput" type="text"
-                                                                                   class="form-control form-control-sm orgIdInput" required>
+                                                                                   class="form-control form-control-sm orgIdInput"
+                                                                                   required>
 
                                                                         </div>
 
@@ -574,14 +595,16 @@
                                                                             <label class="form-label">Admin ID
                                                                             </label>
                                                                             <input name="adminIdInput" type="text"
-                                                                                   class="form-control form-control-sm adminIdInput" required>
+                                                                                   class="form-control form-control-sm adminIdInput"
+                                                                                   required>
 
                                                                         </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Event ID
                                                                             </label>
                                                                             <input name="eventIdInput" type="text"
-                                                                                   class="form-control form-control-sm eventIdInput" required>
+                                                                                   class="form-control form-control-sm eventIdInput"
+                                                                                   required>
 
                                                                         </div>
                                                                     </div>
@@ -591,7 +614,8 @@
                                                                                 data-bs-dismiss="modal">Cancel
                                                                         </button>
 
-                                                                        <button type="submit" class="btn btn-primary">Update Member
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            Update Member
                                                                         </button>
                                                                     </div>
                                                                 </form>
@@ -632,6 +656,9 @@
 
 
                 </div>
+
+
+
             </div>
 
             <!-- /.container-fluid -->
@@ -660,26 +687,6 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.jsp">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -694,8 +701,9 @@
 <!-- Page level plugins -->
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 
@@ -705,14 +713,14 @@
 
 <script>
 
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#membersTable').DataTable();
-    } );
+    });
 
 
-    $(function() {
+    $(function () {
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.delete_member').hover(function () {
                 $tr = $(this).closest('tr');
             })
@@ -724,16 +732,16 @@
             var modalTitle = deleteModal.querySelector('.modal-title')
             var modalBodyInput = deleteModal.querySelector('.rowToDelete')
 
-            modalTitle.textContent = 'Delete Member ' + $('.member-first',$tr).text() + $('.member-last',$tr).text()+'?'
-            modalBodyInput.value = $('.member-id',$tr).text()
+            modalTitle.textContent = 'Delete Member ' + $('.member-first', $tr).text() + $('.member-last', $tr).text() + '?'
+            modalBodyInput.value = $('.member-id', $tr).text()
 
 
         })
     })
 
-    $(function() {
+    $(function () {
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.update_member').hover(function () {
                 $tr = $(this).closest('tr');
             })
@@ -762,27 +770,24 @@
             var modaleventIdInput = updateModal.querySelector('.eventIdInput')
 
 
-
-            modalTitle.textContent = 'Update Member ' + $('.member-first',$tr).text() + $('.member-last',$tr).text() +'?'
-            modalmemberIdInput.value = $('.member-id',$tr).text()
-            modalfirstNameInput.value = $('.member-first',$tr).text()
-            modallastNameInput.value = $('.member-last',$tr).text()
-            modaldobInput.value = $('.member-dob',$tr).text()
-            modalemailInput.value = $('.member-email',$tr).text()
-            modalpassInput.value = $('.member-pass',$tr).text()
-            modalhighSchoolInput.value = $('.member-hs',$tr).text()
-            modalafterGraduationInput.value = $('.member-ag',$tr).text()
-            modalchurchNameInput.value = $('.member-church',$tr).text()
-            modalinterest1Input.value = $('.member-int1',$tr).text()
-            modalinterest2Input.value = $('.member-int2',$tr).text()
-            modalinterest3Input.value = $('.member-int3',$tr).text()
-            modalinterest4Input.value = $('.member-int4',$tr).text()
-            modalphoneInput.value = $('member-phone',$tr).text()
-            modalorgIdInput.value = $('.ord-id',$tr).text()
-            modaladminIdInput.value = $('.admin-id',$tr).text()
-            modaleventIdInput.value = $('.event-id',$tr).text()
-
-
+            modalTitle.textContent = 'Update Member ' + $('.member-first', $tr).text() + $('.member-last', $tr).text() + ' ?'
+            modalmemberIdInput.value = $('.member-id', $tr).text()
+            modalfirstNameInput.value = $('.member-first', $tr).text()
+            modallastNameInput.value = $('.member-last', $tr).text()
+            modaldobInput.value = $('.member-dob', $tr).text()
+            modalemailInput.value = $('.member-email', $tr).text()
+            modalpassInput.value = $('.member-pass', $tr).text()
+            modalhighSchoolInput.value = $('.member-hs', $tr).text()
+            modalafterGraduationInput.value = $('.member-ag', $tr).text()
+            modalchurchNameInput.value = $('.member-church', $tr).text()
+            modalinterest1Input.value = $('.member-int1', $tr).text()
+            modalinterest2Input.value = $('.member-int2', $tr).text()
+            modalinterest3Input.value = $('.member-int3', $tr).text()
+            modalinterest4Input.value = $('.member-int4', $tr).text()
+            modalphoneInput.value = $('member-phone', $tr).text()
+            modalorgIdInput.value = $('.ord-id', $tr).text()
+            modaladminIdInput.value = $('.admin-id', $tr).text()
+            modaleventIdInput.value = $('.event-id', $tr).text()
 
 
         })
