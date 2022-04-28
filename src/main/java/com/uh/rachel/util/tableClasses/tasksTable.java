@@ -3,11 +3,11 @@ package com.uh.rachel.util.tableClasses;
 
 import java.sql.Date;
 
-public class
-tasksTable {
+public class tasksTable {
+
     int taskId;
     String taskName;
-    String   taskDate;
+    String taskDate;
     String description;
     int memberid;
     int eventId;

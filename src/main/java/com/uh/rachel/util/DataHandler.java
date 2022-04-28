@@ -233,7 +233,7 @@ public class DataHandler {
     public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, description, memberid, eventId, taskStatus) VALUES(?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, description, memberid, eventId, status) VALUES (?,?, ?, ?, ?, ?, ?)");
             ps.setInt(1, taskIdInput);
             ps.setString(2, taskNameInput);
             ps.setString(3, taskDateInput);
@@ -339,7 +339,7 @@ public class DataHandler {
     public static void deleteMembersRowByID(int memberIdDelete) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM sunlight.members WHERE memberId=?");
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM sunlight.members WHERE memberid=?");
             preparedStatement.setInt(1, memberIdDelete);
             preparedStatement.executeUpdate();
             preparedStatement.close();

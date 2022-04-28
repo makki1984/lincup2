@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="mailto:info@incup.us">
                         <i class="fa fa-envelope-o"></i>
                         Email
                     </a>
