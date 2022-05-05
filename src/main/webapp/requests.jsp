@@ -3,6 +3,7 @@
 <%@ page import="com.uh.rachel.util.tableClasses.requestsTable" %>
 <%@ page import="com.uh.rachel.util.reportClasses.report3" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html lang="en">
 

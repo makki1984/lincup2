@@ -2,6 +2,7 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.taskStepsTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html lang="en">
 

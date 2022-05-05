@@ -9,7 +9,7 @@ import java.sql.*;
 public class RegistrationModel {
     public static long nextPk(){
         String DRIVER="com.mysql.cj.jdbc.Driver";
-        String CONNECTION="jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
+        String CONNECTION="jdbc:mysql://newdb.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
         String USER="admin";
         String PASSWORD="sunlight";
         Connection conn;
@@ -35,12 +35,12 @@ public class RegistrationModel {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        String CONNECTION="jdbc:mysql://wordpress.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
+        String CONNECTION="jdbc:mysql://newdb.cnzbit2ghk9h.us-east-2.rds.amazonaws.com:3306/sunlight";
         String USER="admin";
         String PASSWORD="sunlight";
         try {
             Connection conn = DriverManager.getConnection(CONNECTION, USER, PASSWORD);
-            PreparedStatement statement = conn.prepareStatement("insert into members (memberid, firstName, lastName, phone, dob, churchName, highSchool, afterGraduation, email, pass, interest1, interest2, interest3, interest4, orgId, adminId, eventId) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement statement = conn.prepareStatement("insert into sunlight.members (memberid, firstName, lastName, phone, dob, churchName, highSchool, afterGraduation, email, pass, interest1, interest2, interest3, interest4, orgId, adminId, eventId) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setLong(1, nextPk());
             statement.setString(2, member.getFirstName());
             statement.setString(3, member.getLastName());

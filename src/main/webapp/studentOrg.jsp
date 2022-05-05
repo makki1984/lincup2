@@ -3,6 +3,7 @@
 <%@ page import="java.util.Vector" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.uh.rachel.util.reportClasses.report3" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 
 <!DOCTYPE html>
 <html lang="en">

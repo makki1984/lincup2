@@ -6,8 +6,6 @@ import com.uh.rachel.util.tableClasses.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Vector;
 
 public class DataHandler {
@@ -16,7 +14,7 @@ public class DataHandler {
         Vector<membersTable> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM members");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.members");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -233,7 +231,7 @@ public class DataHandler {
     public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, description, memberid, eventId, status) VALUES (?,?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.tasks (taskId, taskName, taskDate, description, memberid, eventId, status) VALUES(?, ?, ?, ?, ?, ?, ?)");
             ps.setInt(1, taskIdInput);
             ps.setString(2, taskNameInput);
             ps.setString(3, taskDateInput);
@@ -262,27 +260,27 @@ public class DataHandler {
     public static void updateMembersRowByID(int memberIdInput, String firstNameInput, String lastNameInput, String dobInput, String emailInput, String passInput, String highSchoolInput, String afterGraduationInput, String churchNameInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input, String phoneInput, int orgIdInput, int adminIdInput, int eventIdInput) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE sunlight.members SET firstName=?, lastName=?, dob=?, email=?, pass=?, highSchool=?, afterGraduation=?, churchName=?, interest1=?, interest2=?, interest3=?, interest4=?, phone=?, orgId=?, adminId=?, eventId=? WHERE memberid=?");
-            preparedStatement.setInt(17, memberIdInput);
-            preparedStatement.setString(1, firstNameInput);
-            preparedStatement.setString(2, lastNameInput);
-            preparedStatement.setString(3, dobInput);
-            preparedStatement.setString(4, emailInput);
-            preparedStatement.setString(5, passInput);
-            preparedStatement.setString(6, highSchoolInput);
-            preparedStatement.setString(7, afterGraduationInput);
-            preparedStatement.setString(8, churchNameInput);
-            preparedStatement.setString(9, interest1Input);
-            preparedStatement.setString(10, interest2Input);
-            preparedStatement.setString(11, interest3Input);
-            preparedStatement.setString(12, interest4Input);
-            preparedStatement.setString(13, phoneInput);
-            preparedStatement.setInt(14, orgIdInput);
-            preparedStatement.setInt(15, adminIdInput);
-            preparedStatement.setInt(16, eventIdInput);
+            PreparedStatement ps = conn.prepareStatement("UPDATE sunlight.members SET firstName=?, lastName=?, dob=?, email=?, pass=?, highSchool=?, afterGraduation=?, churchName=?, interest1=?, interest2=?, interest3=?, interest4=?, phone=?, orgId=?, adminId=?, eventId=? WHERE memberid=?");
+            ps.setInt(17, memberIdInput);
+            ps.setString(1, firstNameInput);
+            ps.setString(2, lastNameInput);
+            ps.setString(3, dobInput);
+            ps.setString(4, emailInput);
+            ps.setString(5, passInput);
+            ps.setString(6, highSchoolInput);
+            ps.setString(7, afterGraduationInput);
+            ps.setString(8, churchNameInput);
+            ps.setString(9, interest1Input);
+            ps.setString(10, interest2Input);
+            ps.setString(11, interest3Input);
+            ps.setString(12, interest4Input);
+            ps.setString(13, phoneInput);
+            ps.setInt(14, orgIdInput);
+            ps.setInt(15, adminIdInput);
+            ps.setInt(16, eventIdInput);
 
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
+            ps.executeUpdate();
+            ps.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -339,10 +337,10 @@ public class DataHandler {
     public static void deleteMembersRowByID(int memberIdDelete) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM sunlight.members WHERE memberid=?");
-            preparedStatement.setInt(1, memberIdDelete);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM sunlight.members WHERE memberid=?");
+            ps.setInt(1, memberIdDelete);
+            ps.executeUpdate();
+            ps.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -391,7 +389,7 @@ public class DataHandler {
         Vector<report3> v = new Vector<>();
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM requests JOIN members ON requests.memberid = members.memberid join studentOrg ON requests.orgId = studentOrg.orgId ");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.requests JOIN sunlight.members ON requests.memberid = members.memberid join sunlight.studentOrg ON requests.orgId = studentOrg.orgId ");
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {

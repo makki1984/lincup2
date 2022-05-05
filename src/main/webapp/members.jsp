@@ -2,6 +2,7 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.membersTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 
 
 <!DOCTYPE html>
@@ -37,7 +38,6 @@
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -188,14 +188,14 @@
                             <div class="card-body">
 
                                 <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-                                     aria-labelledby="addModalLabel" aria-hidden="true">
+                                     aria-labelledby="addModalLabel" aria-hidden="false">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="addModalLabel">Add Member</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                    <span aria-hidden="false">&times;</span>
 
                                                 </button>
                                             </div>
@@ -292,7 +292,7 @@
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Cancel
+                                                                data-bs-dismiss="modal">Cancel
                                                         </button>
 
                                                         <button type="submit" class="btn btn-primary">Insert New Event
@@ -338,7 +338,7 @@ style="width: 100%"
                                         %>
 
                                         <tr>
-                                            <td class="member-id"><%= String.valueOf(c.getMemberid())%>
+                                            <td class="member-id"><%= Integer.valueOf(c.getMemberid())%>
                                             </td>
                                             <td class="member-first"><%= String.valueOf(c.getFirstName())%>
                                             </td>
@@ -396,8 +396,8 @@ style="width: 100%"
                                                                     <div class="form-group">
                                                                         <label class="col-form-label">Member
                                                                             ID:</label>
-                                                                        <input name="rowToDelete" type="text"
-                                                                               class="form-control rowToDelete" readonly
+                                                                        <input name="memberIdDelete" type="text"
+                                                                               class="form-control memberIdDelete" readonly
                                                                                required>
                                                                     </div>
 
@@ -492,7 +492,7 @@ style="width: 100%"
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Password
                                                                             </label>
-                                                                            <input name="passInput" type="text"
+                                                                            <input name="passInput" type="password"
                                                                                    class="form-control form-control-sm passInput"
                                                                                    required>
 
@@ -548,7 +548,7 @@ style="width: 100%"
                                                                             </label>
                                                                             <input name="interest2Input" type="text"
                                                                                    class="form-control form-control-sm interest2Input"
-                                                                                   required>
+                                                                                   >
                                                                         </div>
                                                                     </div>
 
@@ -558,14 +558,14 @@ style="width: 100%"
                                                                             </label>
                                                                             <input name="interest3Input" type="text"
                                                                                    class="form-control form-control-sm interest3Input"
-                                                                                   required>
+                                                                                   >
                                                                         </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Interest 4
                                                                             </label>
                                                                             <input name="interest4Input" type="text"
                                                                                    class="form-control form-control-sm interest4Input"
-                                                                                   required>
+                                                                                   >
                                                                         </div>
                                                                     </div>
 
@@ -693,14 +693,14 @@ style="width: 100%"
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
                 <a class="btn btn-primary" href="login.jsp">Logout</a>
             </div>
         </div>
@@ -749,7 +749,7 @@ style="width: 100%"
         deleteModal.addEventListener('show.bs.modal', function () {
 
             var modalTitle = deleteModal.querySelector('.modal-title')
-            var modalBodyInput = deleteModal.querySelector('.rowToDelete')
+            var modalBodyInput = deleteModal.querySelector('.memberIdDelete')
 
             modalTitle.textContent = 'Delete Member ' + $('.member-first', $tr).text() + $('.member-last', $tr).text() + '?'
             modalBodyInput.value = $('.member-id', $tr).text()

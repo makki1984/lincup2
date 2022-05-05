@@ -2,6 +2,7 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.tasksTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -275,7 +276,7 @@
 
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Cancel
+                                    data-bs-dismiss="modal">Cancel
                             </button>
 
                             <button type="submit" class="btn btn-primary">Insert New Task
@@ -521,14 +522,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <div class="modal-body">Select "Logout" below if you are ready to end your current session.
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
         <a class="btn btn-primary" href="login.jsp">Logout</a>
       </div>
     </div>

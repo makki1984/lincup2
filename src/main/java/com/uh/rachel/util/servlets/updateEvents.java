@@ -11,7 +11,16 @@ import java.io.IOException;
 @WebServlet(name = "Events")
 public class updateEvents extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DataHandler.updateEventsRowByID((Integer.parseInt(request.getParameter("eventIdInput") != "" ? request.getParameter("eventIdInput") : "0")), (request.getParameter("eventNameInput") != "" ? request.getParameter("eventNameInput") : "0"), (request.getParameter("eventTypeInput") != "" ? request.getParameter("eventTypeInput") : "0"), (request.getParameter("eventCityInput") != "" ? request.getParameter("eventCityInput") : "0"), (request.getParameter("eventStateInput") != "" ? request.getParameter("eventStateInput") : "0"), (request.getParameter("eventDateInput") != "" ? request.getParameter("eventDateInput") : "0"), (request.getParameter("interest1Input") != "" ? request.getParameter("interest1Input") : "0"), (request.getParameter("interest2Input") != "" ? request.getParameter("interest2Input") : "0"), (request.getParameter("interest3Input") != "" ? request.getParameter("interest3Input") : "0"), (request.getParameter("interest4Input") != "" ? request.getParameter("interest4Input") : "0"));
+        DataHandler.updateEventsRowByID((Integer.parseInt(request.getParameter("eventIdInput") != "" ? request.getParameter("eventIdInput") : "0")),
+                (request.getParameter("eventNameInput") != "" ? request.getParameter("eventNameInput") : "0"),
+                (request.getParameter("eventTypeInput") != "" ? request.getParameter("eventTypeInput") : "0"),
+                (request.getParameter("eventCityInput") != "" ? request.getParameter("eventCityInput") : "0"),
+                (request.getParameter("eventStateInput")!= "" ? request.getParameter("eventStateInput"): "0"),
+                (request.getParameter("eventDateInput") != "" ? request.getParameter("eventDateInput") : "0"),
+                (request.getParameter("interest1Input") != "" ? request.getParameter("interest1Input") : "0"),
+                (request.getParameter("interest2Input") != "" ? request.getParameter("interest2Input") : "0"),
+                (request.getParameter("interest3Input") != "" ? request.getParameter("interest3Input") : "0"),
+                (request.getParameter("interest4Input") != "" ? request.getParameter("interest4Input") : "0"));
         response.sendRedirect("./events.jsp");
     }
 }

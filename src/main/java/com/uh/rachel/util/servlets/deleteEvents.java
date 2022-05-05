@@ -12,7 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "Events")
 public class deleteEvents extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DataHandler.deleteEventsRowByID(Integer.parseInt(request.getParameter("rowToDelete")));
+        DataHandler.deleteEventsRowByID
+                (Integer.parseInt(request.getParameter("rowToDelete")));
         response.sendRedirect("./events.jsp");
     }
 }

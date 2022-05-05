@@ -2,10 +2,12 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -477,7 +479,7 @@
                                                                             <label class="form-label">Interest 2
                                                                             </label>
                                                                             <input name="interest2Input" type="text"
-                                                                                   class="form-control form-control-sm eventIntInput2" required>
+                                                                                   class="form-control form-control-sm eventIntInput2" >
                                                                         </div>
                                                                     </div>
 
@@ -486,13 +488,13 @@
                                                                             <label class="form-label">Interest 3
                                                                             </label>
                                                                             <input name="interest3Input" type="text"
-                                                                                   class="form-control form-control-sm eventIntInput3" required>
+                                                                                   class="form-control form-control-sm eventIntInput3" >
                                                                         </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Interest 4
                                                                             </label>
                                                                             <input name="interest4Input" type="text"
-                                                                                   class="form-control form-control-sm eventIntInput4" required>
+                                                                                   class="form-control form-control-sm eventIntInput4" >
                                                                         </div>
                                                                     </div>
 
