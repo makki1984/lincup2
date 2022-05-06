@@ -18,8 +18,8 @@
 
     <title>LINCUP</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/landing.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/landing.css" rel="stylesheet" />
 
     <!--     Fonts     -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 <body>
 
 
-<div class="main" style="background-image: url('images/landing.jpg')">
+<div class="main" style="background-image: url('assets/images/landing.jpg')">
 
     <!--    Change the image source '/images/default.jpg' with your favourite image.     -->
 

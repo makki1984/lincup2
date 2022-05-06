@@ -16,13 +16,14 @@
     <meta name="author" content="">
 
     <title>LINCUP - Members</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>html, body {
@@ -30,6 +31,10 @@
         padding: 0;
         font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
         font-size: 14px;
+    }
+    td {
+        width:0.1%;
+
     }</style>
 </head>
 
@@ -111,6 +116,12 @@
                 <i class="fas fa-fw fa-user-friends"></i>
                 <span>Student Organizations</span></a>
         </li>
+        <!-- Nav Item - Matching -->
+        <li class="nav-item">
+            <a class="nav-link" href="matching.jsp">
+                <i class="fas fa-fw fa-search-plus"></i>
+                <span>Matching</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -179,11 +190,12 @@
 
                 <h1 class="text-center text-dark"><b>Members</b></h1>
                 <div class="row justify-content-center">
-                    <div class="col-md-12">
 
 
                         <div class="card shadow">
                             <div class="card-header py-3">
+                                <button class="btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#addModal">Add Member</button>
                             </div>
                             <div class="card-body">
 
@@ -193,7 +205,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="addModalLabel">Add Member</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                                <button type="button" class="close" data-bs-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="false">&times;</span>
 
@@ -201,101 +213,182 @@
                                             </div>
                                             <div class="modal-body">
 
-                                                <form action="insertMembers" id="insertForm" method="post">
+                                                <form action="insertMembers" method="post" >
 
-                                                    <div class="form row">
+                                                        <div class="form row">
 
-                                                        <div class="form-group col-md-4">
-                                                            <label class="form-label">Member ID</label>
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">Member ID</label>
 
-                                                            <input name="memberIdInput" type="text"
-                                                                   class="form-control form-control-sm memberIdInput">
+                                                                <input name="memberIdInput" type="text"
+                                                                       class="form-control form-control-sm memberIdInput"
+                                                                       required ></div>
+
+
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">First Name</label>
+                                                                <input name="firstNameInput" type="text"
+                                                                       class="form-control form-control-sm firstNameInput"
+                                                                       required>
+                                                            </div>
+
+
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">Last Name</label>
+                                                                <input name="lastNameInput" type="text"
+                                                                       class="form-control form-control-sm lastNameInput"
+                                                                       required>
+                                                            </div>
                                                         </div>
 
+                                                        <!--                          -->
+                                                        <div class="form row">
 
-                                                        <div class="form-group col-md-4">
-                                                            <label class="form-label">First Name</label>
-                                                            <input name="firstNameInput" type="text"
-                                                                   class="form-control form-control-sm firstNameInput">
+                                                            <div class="form-group col-md-4">
+
+                                                                <label class="form-label">DOB
+                                                                </label>
+                                                                <input name="dobInput" type="date"
+                                                                       class="form-control form-control-sm dobInput"
+                                                                       required>
+                                                            </div>
+
+
+                                                            <div class="form-group col-md-2">
+
+                                                                <label class="form-label">Email
+                                                                </label>
+                                                                <input name="emailInput" type="text"
+                                                                       class="form-control form-control-sm emailInput"
+                                                                       required>
+
+                                                            </div>
+
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Password
+                                                                </label>
+                                                                <input name="passInput" type="password"
+                                                                       class="form-control form-control-sm passInput"
+                                                                       required>
+
+                                                            </div>
                                                         </div>
 
+                                                        <div class="form row">
 
-                                                        <div class="form-group col-md-4">
-                                                            <label class="form-label">Last Name</label>
-                                                            <input name="lastNameInput" type="text"
-                                                                   class="form-control form-control-sm">
+                                                            <div class="form-group col-md-4">
+
+                                                                <label class="form-label">High School
+                                                                </label>
+                                                                <input name="highSchoolInput" type="text"
+                                                                       class="form-control form-control-sm highSchoolInput"
+                                                                       required>
+                                                            </div>
+
+
+                                                            <div class="form-group col-md-2">
+
+                                                                <label class="form-label">After Graduation
+                                                                </label>
+                                                                <input name="afterGraduationInput"
+                                                                       type="text"
+                                                                       class="form-control form-control-sm afterGraduationInput"
+                                                                       required>
+
+                                                            </div>
+
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Church
+                                                                </label>
+                                                                <input name="churchNameInput" type="text"
+                                                                       class="form-control form-control-sm churchNameInput"
+                                                                       required>
+
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <!--                          -->
-                                                    <div class="form row">
+                                                        <div class="form row">
 
-                                                        <div class="form-group col-md-4">
-
-                                                            <label class="form-label">City
-                                                            </label>
-                                                            <input name="eventCityInput" type="text"
-                                                                   class="form-control form-control-sm">
-                                                        </div>
-
-
-                                                        <div class="form-group col-md-2">
-
-                                                            <label class="form-label">State
-                                                            </label>
-                                                            <input name="eventStateInput" type="text"
-                                                                   class="form-control form-control-sm">
-
-                                                        </div>
-
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label">Date
-                                                            </label>
-                                                            <input name="eventDateInput" type="date"
-                                                                   class="form-control form-control-sm">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form row">
-
-                                                        <div class="form-group col-md-6 ml-auto
+                                                            <div class="form-group col-md-6 ml-auto
 ">
-                                                            <label class="form-label">Interest 1
-                                                            </label>
-                                                            <input name="interest1Input" type="text"
-                                                                   class="form-control form-control-sm">
-                                                        </div>
-                                                        <div class="form-group col-md-6 ml-auto
+                                                                <label class="form-label">Interest 1
+                                                                </label>
+                                                                <input name="interest1Input" type="text"
+                                                                       class="form-control form-control-sm interest1Input"
+                                                                       required>
+                                                            </div>
+                                                            <div class="form-group col-md-6 ml-auto
 ">
-                                                            <label class="form-label">Interest 2
-                                                            </label>
-                                                            <input name="interest2Input" type="text"
-                                                                   class="form-control form-control-sm">
+                                                                <label class="form-label">Interest 2
+                                                                </label>
+                                                                <input name="interest2Input" type="text"
+                                                                       class="form-control form-control-sm interest2Input"
+                                                                >
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="form row">
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label">Interest 3
-                                                            </label>
-                                                            <input name="interest3Input" type="text"
-                                                                   class="form-control form-control-sm">
+                                                        <div class="form row">
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Interest 3
+                                                                </label>
+                                                                <input name="interest3Input" type="text"
+                                                                       class="form-control form-control-sm interest3Input"
+                                                                >
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Interest 4
+                                                                </label>
+                                                                <input name="interest4Input" type="text"
+                                                                       class="form-control form-control-sm interest4Input"
+                                                                >
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label">Interest 4
-                                                            </label>
-                                                            <input name="interest4Input" type="text"
-                                                                   class="form-control form-control-sm">
-                                                        </div>
-                                                    </div>
 
+                                                        <div class="form row">
+
+                                                            <div class="form-group col-md-4">
+
+                                                                <label class="form-label">Phone
+                                                                </label>
+                                                                <input name="phoneInput" type="text"
+                                                                       class="form-control form-control-sm phoneInput"
+                                                                       required>
+                                                            </div>
+
+
+                                                            <div class="form-group col-md-2">
+
+                                                                <label class="form-label">Org ID
+                                                                </label>
+                                                                <input name="orgIdInput" type="text"
+                                                                       class="form-control form-control-sm orgIdInput"
+                                                                       required>
+
+                                                            </div>
+
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Admin ID
+                                                                </label>
+                                                                <input name="adminIdInput" type="text"
+                                                                       class="form-control form-control-sm adminIdInput"
+                                                                       required>
+
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label class="form-label">Event ID
+                                                                </label>
+                                                                <input name="eventIdInput" type="text"
+                                                                       class="form-control form-control-sm eventIdInput"
+                                                                       required>
+
+                                                            </div>
+                                                        </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Cancel
                                                         </button>
 
-                                                        <button type="submit" class="btn btn-primary">Insert New Event
+                                                        <button type="submit" class="btn btn-primary">Add New Member
                                                         </button>
                                                     </div>
                                                 </form>
@@ -303,12 +396,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="table-wrap">
+                                    <div style="height:690px">
 
 
-                                <div style="width: 100%">
                                     <table id="membersTable"
-                                           class="display"
-style="width: 100%"
+                                           class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"style="width: 100%"
 
                                     >
                                         <thead>
@@ -348,7 +441,7 @@ style="width: 100%"
                                             </td>
                                             <td class="member-email"><%= String.valueOf(c.getEmail())%>
                                             </td>
-                                            <td class="member-pass"><%= String.valueOf(c.getPass())%>
+                                            <td class="member-pass" ><%= String.valueOf(c.getPass())%>
                                             </td>
                                             <td class="member-hs"><%= String.valueOf(c.getHighSchool())%>
                                             </td>
@@ -432,7 +525,7 @@ style="width: 100%"
                                                                     Member</h5>
                                                                 <button type="button" class="close"
                                                                         data-bs-dismiss="modal"
-                                                                        aria-label="Close">
+                                                                        aria-label="Close">x
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
@@ -473,7 +566,7 @@ style="width: 100%"
 
                                                                             <label class="form-label">DOB
                                                                             </label>
-                                                                            <input name="dobInput" type="text"
+                                                                            <input name="dobInput" type="date"
                                                                                    class="form-control form-control-sm dobInput"
                                                                                    required>
                                                                         </div>
@@ -715,7 +808,7 @@ style="width: 100%"
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="assets/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
 
@@ -731,12 +824,20 @@ style="width: 100%"
 
 
 <script>
+    function nameFormatter(value) {
+        var str='';
+        for(i=0;i<value.length;i++)
+        {
+            str=str+'*';
+        }
+        return str;
+    }
 
     $(document).ready(function () {
         $('#membersTable').DataTable();
     });
 
-
+  
     $(function () {
 
         $(document).ready(function () {

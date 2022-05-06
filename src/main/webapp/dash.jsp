@@ -18,10 +18,10 @@
     <title>LINCUP - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.0/main.min.css,npm/fullcalendar@5.11.0/main.min.css">
 
@@ -121,6 +121,12 @@
             <a class="nav-link" href="studentOrg.jsp">
                 <i class="fas fa-fw fa-user-friends"></i>
                 <span>Student Organizations</span></a>
+        </li>
+        <!-- Nav Item - Matching -->
+        <li class="nav-item">
+            <a class="nav-link" href="matching.jsp">
+                <i class="fas fa-fw fa-search-plus"></i>
+                <span>Matching</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -336,12 +342,12 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="assets/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.0,npm/fullcalendar@5.11.0/locales-all.min.js,npm/fullcalendar@5.11.0/main.min.js"></script>
 
 <script>

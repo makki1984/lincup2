@@ -17,11 +17,11 @@
     <title>LINCUP - Events</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
@@ -112,6 +112,12 @@
                 <i class="fas fa-fw fa-user-friends"></i>
                 <span>Student Organizations</span></a>
         </li>
+        <!-- Nav Item - Matching -->
+        <li class="nav-item">
+            <a class="nav-link" href="matching.jsp">
+                <i class="fas fa-fw fa-search-plus"></i>
+                <span>Matching</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -185,7 +191,7 @@
 
                         <div class="card shadow mb-4">
                             <div class="card-header align-items-end py-3">
-                                <i class="fas fa-plus fa-2x" style="color: royalblue" data-bs-toggle="modal" data-bs-target="#addModal"></i>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add Event</button>
 
                             </div>
                             <div class="card-body">
@@ -200,7 +206,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="addModalLabel">Add Event</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                                <button type="button" class="close" data-bs-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
 
@@ -314,7 +320,7 @@
 
                                 <div class="table-responsive">
                                     <table id="eventsTable"
-                                           class="display"
+                                           class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"
                                            style="width:100%"
 
 
@@ -588,31 +594,25 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="assets/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
-
-
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 
 
 <script>
 
     $(document).ready( function () {
         $('#eventsTable').DataTable();
+
     } );
 
 
