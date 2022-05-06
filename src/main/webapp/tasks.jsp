@@ -297,7 +297,7 @@
 
                 <div>
                   <table id="taskTable"
-                         class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"                         style="width:100%"
+                         class=" table table-striped  dataTables_scroll dataTable" style="width: 100%"
 
 
                   >
@@ -568,8 +568,14 @@
 <script>
 
   $(document).ready( function () {
-    $('#taskTable').DataTable();
+    $('#taskTable').DataTable( {
+
+      "ordering": false
+
+
+    } );
   } );
+
 
 
   $(function() {

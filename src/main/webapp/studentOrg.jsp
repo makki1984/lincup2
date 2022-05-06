@@ -32,11 +32,30 @@
         color: #fff;
         padding: 10px 0;
     }
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
+
+    .card-block {
+        font-size: 1em;
+        position: relative;
+        margin: 0;
+        padding: 1em;
         border: none;
+        border-top: 1px solid rgba(34, 36, 38, .1);
+        box-shadow: none;
+
     }
+    .card {
+        font-size: 1em;
+        overflow: hidden;
+        padding-top: 5;
+        padding-right: 5;
+        padding-left: 5;
+        padding-bottom: 5;
+        border: none;
+        border-radius: .28571429rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+        margin-top:20px;
+    }
+
     .text-muted i {
         margin: 0 10px;
     }

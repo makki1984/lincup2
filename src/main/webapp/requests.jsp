@@ -197,7 +197,7 @@
 
 
 <table id="Table"
-       class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"       style="width:100%">
+       class=" table table-striped dataTables_scroll dataTable" style="width: 100%">
   <thead>
   <tr>
     <th>Request ID</th>
@@ -320,8 +320,13 @@
 <script>
 
   $(document).ready( function () {
-    $('#Table').DataTable();
-  } )
+    $('#Table').DataTable( {
+
+      "ordering": false
+
+
+    } );
+  } );
 </script>
 </body>
 

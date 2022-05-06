@@ -26,6 +26,7 @@
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
     <style>html, body {
         margin: 0;
         padding: 0;
@@ -35,7 +36,10 @@
     td {
         width:0.1%;
 
-    }</style>
+    }
+
+    .hidetext { -webkit-text-security: disc; /* Default */ }
+    </style>
 </head>
 
 
@@ -193,7 +197,7 @@
 
 
                         <div class="card shadow">
-                            <div class="card-header py-3">
+                            <div class="card-header">
                                 <button class="btn btn-primary"
                                         data-bs-toggle="modal" data-bs-target="#addModal">Add Member</button>
                             </div>
@@ -254,7 +258,7 @@
                                                             </div>
 
 
-                                                            <div class="form-group col-md-2">
+                                                            <div class="form-group col-md-4">
 
                                                                 <label class="form-label">Email
                                                                 </label>
@@ -264,7 +268,7 @@
 
                                                             </div>
 
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-4">
                                                                 <label class="form-label">Password
                                                                 </label>
                                                                 <input name="passInput" type="password"
@@ -286,7 +290,7 @@
                                                             </div>
 
 
-                                                            <div class="form-group col-md-2">
+                                                            <div class="form-group col-md-4">
 
                                                                 <label class="form-label">After Graduation
                                                                 </label>
@@ -297,7 +301,7 @@
 
                                                             </div>
 
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-4">
                                                                 <label class="form-label">Church
                                                                 </label>
                                                                 <input name="churchNameInput" type="text"
@@ -401,26 +405,28 @@
 
 
                                     <table id="membersTable"
-                                           class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"style="width: 100%"
+                                           class="table-striped " style="width: 100%"
 
                                     >
                                         <thead>
-                                        <tr class="tr-class-1">
-                                            <th data-valign="middle">Member ID</th>
-                                            <th data-valign="middle">First Name</th>
-                                            <th data-valign="middle">Last Type</th>
-                                            <th data-valign="middle">DOB</th>
-                                            <th data-valign="middle">Email</th>
-                                            <th data-valign="middle">Pass</th>
-                                            <th data-valign="middle">High School</th>
-                                            <th data-valign="middle">After Graduation</th>
-                                            <th data-valign="middle">Church Name</th>
-                                            <th colspan="4">Interests</th>
-                                            <th data-valign="middle">Phone</th>
-                                            <th data-valign="middle">Org ID</th>
-                                            <th data-valign="middle">Admin ID</th>
-                                            <th data-valign="middle">Event ID</th>
-                                            <th class="text-center">Actions</th>
+                                        <tr >
+                                            <th >Member ID</th>
+                                            <th colspan="2">Name</th>
+
+                                            <th >DOB</th>
+                                            <th >Email</th>
+                                            <th >Pass</th>
+                                            <th >High School</th>
+                                            <th >After Graduation</th>
+                                            <th >Church Name</th>
+                                            <th  colspan="4">Interests</th>
+
+
+                                            <th >Phone</th>
+                                            <th >Org ID</th>
+                                            <th >Admin ID</th>
+                                            <th >Event ID</th>
+                                            <th >Actions</th>
 
                                         </tr>
 
@@ -441,7 +447,7 @@
                                             </td>
                                             <td class="member-email"><%= String.valueOf(c.getEmail())%>
                                             </td>
-                                            <td class="member-pass" ><%= String.valueOf(c.getPass())%>
+                                            <td class="member-pass hidetext" ><%= String.valueOf(c.getPass())%>
                                             </td>
                                             <td class="member-hs"><%= String.valueOf(c.getHighSchool())%>
                                             </td>
@@ -572,7 +578,7 @@
                                                                         </div>
 
 
-                                                                        <div class="form-group col-md-2">
+                                                                        <div class="form-group col-md-4">
 
                                                                             <label class="form-label">Email
                                                                             </label>
@@ -582,7 +588,7 @@
 
                                                                         </div>
 
-                                                                        <div class="form-group col-md-6">
+                                                                        <div class="form-group col-md-4">
                                                                             <label class="form-label">Password
                                                                             </label>
                                                                             <input name="passInput" type="password"
@@ -604,7 +610,7 @@
                                                                         </div>
 
 
-                                                                        <div class="form-group col-md-2">
+                                                                        <div class="form-group col-md-4">
 
                                                                             <label class="form-label">After Graduation
                                                                             </label>
@@ -615,7 +621,7 @@
 
                                                                         </div>
 
-                                                                        <div class="form-group col-md-6">
+                                                                        <div class="form-group col-md-4">
                                                                             <label class="form-label">Church
                                                                             </label>
                                                                             <input name="churchNameInput" type="text"
@@ -723,21 +729,24 @@
                                         </tbody>
                                         <tfoot>
                                         <tr>
-                                            <th data-valign="middle">Member ID</th>
-                                            <th data-valign="middle">First Name</th>
-                                            <th data-valign="middle">Last Type</th>
-                                            <th data-valign="middle">DOB</th>
-                                            <th data-valign="middle">Email</th>
-                                            <th data-valign="middle">Pass</th>
-                                            <th data-valign="middle">High School</th>
-                                            <th data-valign="middle">After Graduation</th>
-                                            <th data-valign="middle">Church Name</th>
-                                            <th colspan="4">Interests</th>
-                                            <th data-valign="middle">Phone</th>
-                                            <th data-valign="middle">Org ID</th>
-                                            <th data-valign="middle">Admin ID</th>
-                                            <th data-valign="middle">Event ID</th>
-                                            <th class="text-center">Actions</th>
+                                            <th >Member ID</th>
+                                            <th colspan="2">Name</th>
+
+
+                                            <th >DOB</th>
+                                            <th >Email</th>
+                                            <th >Pass</th>
+                                            <th >High School</th>
+                                            <th >After Graduation</th>
+                                            <th >Church Name</th>
+                                            <th  colspan="4">Interests</th>
+
+
+                                            <th >Phone</th>
+                                            <th >Org ID</th>
+                                            <th >Admin ID</th>
+                                            <th >Event ID</th>
+                                            <th >Actions</th>
                                         </tr>
                                         </tfoot>
                                     </table>
@@ -825,18 +834,16 @@
 
 
 <script>
-    function nameFormatter(value) {
-        var str='';
-        for(i=0;i<value.length;i++)
-        {
-            str=str+'*';
-        }
-        return str;
-    }
+
 
     $(document).ready(function () {
-        $('#membersTable').DataTable();
-    });
+        $('#membersTable').DataTable( {
+
+            "ordering": false
+
+
+        } );
+    } );
 
   
     $(function () {
@@ -905,7 +912,7 @@
             modalinterest2Input.value = $('.member-int2', $tr).text()
             modalinterest3Input.value = $('.member-int3', $tr).text()
             modalinterest4Input.value = $('.member-int4', $tr).text()
-            modalphoneInput.value = $('member-phone', $tr).text()
+            modalphoneInput.value = $('.member-phone', $tr).text()
             modalorgIdInput.value = $('.ord-id', $tr).text()
             modaladminIdInput.value = $('.admin-id', $tr).text()
             modaleventIdInput.value = $('.event-id', $tr).text()

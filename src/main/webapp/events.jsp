@@ -30,7 +30,9 @@
         padding: 0;
         font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
         font-size: 14px;
-    }</style>
+    }
+
+    </style>
 </head>
 
 
@@ -319,11 +321,8 @@
 
                                 <div class="table-responsive">
                                     <table id="eventsTable"
-                                           class="table-striped  dataTables_paginate dataTables_filter dataTables_scroll dataTable"
-                                           style="width:100%"
+                                           class=" table table-striped  dataTables_scroll dataTable" style="width: 100%">
 
-
-                                    >
                                         <thead>
                                         <tr class="tr-class-1">
                                             <th  data-valign="middle">Event ID</th>
@@ -619,8 +618,13 @@
 <script>
 
     $(document).ready( function () {
-        $('#eventsTable').DataTable();
+        $('#eventsTable').DataTable
+        ( {
 
+            "ordering": false
+
+
+        } );
     } );
 
 
