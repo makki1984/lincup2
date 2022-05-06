@@ -3,6 +3,10 @@
 <%@ page import="com.uh.rachel.util.tableClasses.membersTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ page import="com.uh.rachel.util.tableClasses.studentOrgTable" %>
+<%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
+
+
 
 
 <!DOCTYPE html>
@@ -43,7 +47,22 @@
 </head>
 
 
+
 <body id="page-top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -459,13 +478,13 @@
                                             </td>
                                             <td class="member-int2"><%= String.valueOf(c.getInterest2())%>
                                             </td>
-                                            <td class="member-int3"><%= String.valueOf(c.getInterest3())%>
+                                            <td class="member-int3" ><%= String.valueOf(c.getInterest3())%>
                                             </td>
                                             <td class="member-int4"><%= String.valueOf(c.getInterest4())%>
                                             </td>
                                             <td class="member-phone"><%= String.valueOf(c.getPhone())%>
                                             </td>
-                                            <td class="ord-id"><%= Integer.valueOf(c.getOrgid())%>
+                                            <td class="ord-id" ><%= Integer.valueOf(c.getOrgid())%>
                                             </td>
                                             <td class="admin-id"><%= Integer.valueOf(c.getAdminId())%>
                                             </td>
@@ -680,17 +699,31 @@
                                                                         </div>
 
 
-                                                                        <div class="form-group col-md-2">
+                                                                        <div class="form-group col-md-4">
 
                                                                             <label class="form-label">Org ID
                                                                             </label>
-                                                                            <input name="orgIdInput" type="text"
-                                                                                   class="form-control form-control-sm orgIdInput"
-                                                                                   required>
+
+                                                                            <select name="orgIdInput" type="text"
+                                                                                    class="form-control form-control-sm orgIdInput"
+                                                                                    required>
+                                                                                <% Vector<studentOrgTable> n = DataHandler.getStudentOrg();
+                                                                                    for (studentOrgTable b : n) {
+                                                                                %>
+
+
+                                                                                <option value="<%= String.valueOf(b.getOrgId())%>"><%= String.valueOf(b.getOrgName())%></option>
+                                                                                <%
+                                                                                    }
+                                                                                %>
+                                                                            </select>
+                                                                            <%
+
+                                                                            %>
 
                                                                         </div>
 
-                                                                        <div class="form-group col-md-6">
+                                                                        <div class="form-group col-md-4">
                                                                             <label class="form-label">Admin ID
                                                                             </label>
                                                                             <input name="adminIdInput" type="text"
@@ -698,13 +731,35 @@
                                                                                    required>
 
                                                                         </div>
-                                                                        <div class="form-group col-md-6">
+                                                                       <!-- <div class="form-group col-md-6">
                                                                             <label class="form-label">Event ID
                                                                             </label>
                                                                             <input name="eventIdInput" type="text"
                                                                                    class="form-control form-control-sm eventIdInput"
                                                                                    required>
 
+                                                                        </div>
+-->
+
+                                                                        <div class="form-group col-md-6">
+                                                                        <label class="form-label">Event ID
+                                                                        </label>
+                                                                            <select name="eventIdInput" type="text"
+                                                                                    class="form-control form-control-sm eventIdInput"
+                                                                                    required>
+                                                                                <% Vector<eventsTable> w = DataHandler.getEvents();
+                                                                                    for (eventsTable a : w) {
+                                                                                %>
+
+
+                                                                                <option value="<%= String.valueOf(a.getEventId())%>"><%= String.valueOf(a.getEventName())%></option>
+                                                                                <%
+                                                                                    }
+                                                                                %>
+                                                                            </select>
+                                                                        <%
+
+                                                                        %>
                                                                         </div>
                                                                     </div>
 
@@ -750,6 +805,20 @@
                                         </tr>
                                         </tfoot>
                                     </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
 
@@ -845,7 +914,7 @@
         } );
     } );
 
-  
+
     $(function () {
 
         $(document).ready(function () {

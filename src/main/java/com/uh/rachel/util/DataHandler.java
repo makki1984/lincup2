@@ -228,6 +228,24 @@ public class DataHandler {
         } catch (Exception e) {e.printStackTrace();}
     }
 
+    public static void insertOrgsRowByID( int orgIdInput, String cityInput, String stateInput, String universityInput, String orgNameInput, String interest1Input, String interest2Input, String interest3Input, String interest4Input) {
+        try {
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.studentOrg ( orgId, city, state, university, orgName, interest1, interest2, interest3, interest4) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setInt(1, orgIdInput);
+            ps.setString(2, cityInput);
+            ps.setString(3, stateInput);
+            ps.setString(4, universityInput);
+            ps.setString(5, orgNameInput);
+            ps.setString(6, interest1Input);
+            ps.setString(7, interest2Input);
+            ps.setString(8, interest3Input);
+            ps.setString(9, interest4Input);
+            ps.executeUpdate();
+            ps.close();
+        } catch (Exception e) {e.printStackTrace();}
+    }
+
     public static void insertTasksRowByID(int taskIdInput, String taskNameInput, String taskDateInput, String taskDescriptionInput, int MemberIdInput, int EventIdInput, String taskStatusInput){
         try {
             Connection conn = ConnectionProvider.getConnection();

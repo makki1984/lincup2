@@ -82,6 +82,8 @@ public class studentOrgTable {
         this.state = state;
     }
 
+    public void setUniversity(String university) { this.university= university; }
+
     public void setOrgName(String orgName) {
         this.orgName = orgName;
     }
@@ -94,9 +96,7 @@ public class studentOrgTable {
         this.interest2 = interest2;
     }
 
-    public void setInterest3(String interest3) {
-        this.interest3 = interest3;
-    }
+    public void setInterest3(String interest3) { this.interest3 = interest3;}
 
     public void setInterest4(String interest4) {
         this.interest4 = interest4;

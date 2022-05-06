@@ -226,11 +226,128 @@
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-
+                                <button class="btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#addModal">Add Student Org</button>
                             </div>
                             <div class="card-body">
 
+                                <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="addModalLabel" aria-hidden="false">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="addModalLabel">Add Organization</h5>
+                                                <button type="button" class="close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="false">&times;</span>
 
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form action="insertOrg" method="post" >
+
+                                                    <div class="form row">
+
+                                                        <div class="form-group col-md-4">
+                                                            <label class="form-label">Org ID</label>
+
+                                                            <input name="orgIdInput" type="text"
+                                                                   class="form-control form-control-sm orgIdInput"
+                                                                   required ></div>
+
+
+                                                        <div class="form-group col-md-4">
+                                                            <label class="form-label">City</label>
+                                                            <input name="cityInput" type="text"
+                                                                   class="form-control form-control-sm cityInput"
+                                                                   required>
+                                                        </div>
+
+
+                                                        <div class="form-group col-md-4">
+                                                            <label class="form-label">State</label>
+                                                            <input name="stateInput" type="text"
+                                                                   class="form-control form-control-sm stateInput"
+                                                                   required>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--                          -->
+                                                    <div class="form row">
+
+
+                                                        <div class="form-group col-md-4">
+
+                                                            <label class="form-label">University
+                                                            </label>
+                                                            <input name="universityInput" type="text"
+                                                                   class="form-control form-control-sm universityInput"
+                                                                   required>
+
+                                                        </div>
+
+                                                        <div class="form-group col-md-4">
+                                                            <label class="form-label">Organization Name
+                                                            </label>
+                                                            <input name="orgNameInput" type="text"
+                                                                   class="form-control form-control-sm orgNameInput"
+                                                                   required>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form row">
+
+                                                        <div class="form-group col-md-6 ml-auto
+">
+                                                            <label class="form-label">Interest 1
+                                                            </label>
+                                                            <input name="interest1Input" type="text"
+                                                                   class="form-control form-control-sm interest1Input"
+                                                                   >
+                                                        </div>
+                                                        <div class="form-group col-md-6 ml-auto
+">
+                                                            <label class="form-label">Interest 2
+                                                            </label>
+                                                            <input name="interest2Input" type="text"
+                                                                   class="form-control form-control-sm interest2Input"
+                                                            >
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form row">
+                                                        <div class="form-group col-md-6">
+                                                            <label class="form-label">Interest 3
+                                                            </label>
+                                                            <input name="interest3Input" type="text"
+                                                                   class="form-control form-control-sm interest3Input"
+                                                            >
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label class="form-label">Interest 4
+                                                            </label>
+                                                            <input name="interest4Input" type="text"
+                                                                   class="form-control form-control-sm interest4Input"
+                                                            >
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel
+                                                        </button>
+
+                                                        <button type="submit" class="btn btn-primary">Add New Organization
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 

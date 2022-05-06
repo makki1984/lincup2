@@ -1,6 +1,8 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.tasksTable" %>
+<%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
+<%@ page import="com.uh.rachel.util.tableClasses.membersTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
@@ -252,23 +254,50 @@
                           </div>
 
                           <div class="form row">
-                            <div class="form-group col-md-4">
 
-                              <label class="form-label">Member ID
-                              </label>
-                              <input name="MemberIdInput" type="text"
-                                     class="form-control form-control-sm MemberIdInput" required>
+                              <div class="form-group col-md-6">
+                                <label class="form-label">Member
+                                </label>
+                                <select name="MemberIdInput" type="text"
+                                        class="form-control form-control-sm MemberIdInput"
+                                        required>
+                                  <% Vector<membersTable> m = DataHandler.getMembers();
+                                    for (membersTable y : m) {
+                                  %>
 
-                            </div>
 
-                            <div class="form-group col-md-4">
-                              <label class="form-label">Event ID
-                              </label>
-                              <input name="EventIdInput" type="text"
-                                     class="form-control form-control-sm EventIdInput" required>
+                                  <option value="<%= String.valueOf(y.getMemberid())%>"><%= String.valueOf(y.getFirstName())%>&nbsp;<%= String.valueOf(y.getLastName())%></option>
+                                  <%
+                                    }
+                                  %>
+                                </select>
+                                <%
 
-                            </div>
-                            <div class="form-group col-md-4">
+                                %>
+                              </div>
+
+                              <div class="form-group col-md-6">
+                                <label class="form-label">Event
+                                </label>
+                                <select name="EventIdInput" type="text"
+                                        class="form-control form-control-sm EventIdInput"
+                                        required>
+                                  <% Vector<eventsTable> o = DataHandler.getEvents();
+                                    for (eventsTable k : o) {
+                                  %>
+
+
+                                  <option value="<%= String.valueOf(k.getEventId())%>"><%= String.valueOf(k.getEventName())%></option>
+                                  <%
+                                    }
+                                  %>
+                                </select>
+                                <%
+
+                                %>
+                              </div>
+
+                              <div class="form-group col-md-4">
                               <label class="form-label">Status
                               </label>
                               <select name="taskStatusInput" type="text"
@@ -424,22 +453,52 @@
                                   </div>
 
                                     <div class="form row">
-                                    <div class="form-group col-md-4">
 
-                                      <label class="form-label">Member ID
-                                      </label>
-                                      <input name="MemberIdInput" type="text"
-                                             class="form-control form-control-sm MemberIdInput" required>
 
-                                    </div>
+                                      <div class="form-group col-md-6">
+                                        <label class="form-label">Member
+                                        </label>
+                                        <select name="MemberIdInput" type="text"
+                                                class="form-control form-control-sm MemberIdInput"
+                                                required>
+                                          <% Vector<membersTable> b = DataHandler.getMembers();
+                                            for (membersTable l : b) {
+                                          %>
 
-                                    <div class="form-group col-md-4">
-                                      <label class="form-label">Event ID
-                                      </label>
-                                      <input name="EventIdInput" type="text"
-                                             class="form-control form-control-sm EventIdInput" required>
 
-                                    </div>
+                                          <option value="<%= String.valueOf(l.getMemberid())%>"><%= String.valueOf(l.getFirstName())%>&nbsp;<%= String.valueOf(l.getLastName())%></option>
+                                          <%
+                                            }
+                                          %>
+                                        </select>
+                                        <%
+
+                                        %>
+                                      </div>
+
+                                      <div class="form-group col-md-6">
+                                        <label class="form-label">Event
+                                        </label>
+                                        <select name="EventIdInput" type="text"
+                                                class="form-control form-control-sm EventIdInput"
+                                                required>
+                                          <% Vector<eventsTable> w = DataHandler.getEvents();
+                                            for (eventsTable a : w) {
+                                          %>
+
+
+                                          <option value="<%= String.valueOf(a.getEventId())%>"><%= String.valueOf(a.getEventName())%></option>
+                                          <%
+                                            }
+                                          %>
+                                        </select>
+                                        <%
+
+                                        %>
+                                      </div>
+
+
+
                                       <div class="form-group col-md-4">
                                         <label class="form-label">Status
                                         </label>

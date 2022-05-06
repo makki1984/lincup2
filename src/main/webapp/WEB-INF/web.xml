@@ -92,8 +92,15 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>insertOrg</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.insertOrg</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>insertOrg</servlet-name>
+        <url-pattern>/insertOrg</url-pattern>
+    </servlet-mapping>
 
 
 
