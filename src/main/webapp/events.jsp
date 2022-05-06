@@ -56,7 +56,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link" href="dash.jsp">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-home"></i>
                 <span>Dashboard</span></a>
         </li>
 
@@ -167,7 +167,7 @@
                              aria-labelledby="userDropdown">
 
 
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" data-toggle="modal" data-bs-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -183,9 +183,8 @@
             <div class="container-fluid mt-5 pt-5">
 
                 <!-- Page Heading -->
-
-                <h1 class="text-center text-dark"><b>Events</b></h1>
-                <div class="row justify-content-center">
+                <h2>Events</h2>
+                <hr/>               <div class="row justify-content-center">
                     <div class="col-md-10 mb-3">
 
 
@@ -598,14 +597,23 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="assets/js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
+<!-- Bootstrap core JavaScript-->
 
-<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="assets/js/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 
 <script>

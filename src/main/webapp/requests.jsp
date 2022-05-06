@@ -184,8 +184,8 @@
 
         <!-- Page Heading -->
 
-        <h1 class="text-center text-dark"><b>Requests</b></h1>
-        <div class="row justify-content-center">
+        <h2>Requests</h2>
+        <hr/>        <div class="row justify-content-center">
           <div class="col-md-10 mb-3">
 
 

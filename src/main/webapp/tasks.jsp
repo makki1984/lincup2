@@ -55,7 +55,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="dash.jsp">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-fw fa-home"></i>
         <span>Dashboard</span></a>
     </li>
 
@@ -183,8 +183,8 @@
 
         <!-- Page Heading -->
 
-        <h1 class="text-center text-dark"><b>Tasks</b></h1>
-        <div class="row justify-content-center">
+        <h2>Tasks</h2>
+        <hr/>      <div class="row justify-content-center">
           <div class="col-md-10 mb-3">
 
 
@@ -542,22 +542,24 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="assets/js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
+<!-- Bootstrap core JavaScript-->
 
+<!-- Core plugin JavaScript-->
+<script src="assets/js/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 
 
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

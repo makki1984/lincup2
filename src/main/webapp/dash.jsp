@@ -66,7 +66,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link" href="dash.jsp">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-home"></i>
                 <span>Dashboard</span></a>
         </li>
 
@@ -193,9 +193,8 @@
             <div class="container-fluid mt-5 pt-5">
 
                 <!-- Page Heading -->
-                <h1 class="display-1 text-center"><b>Dashboard</b></h1>
-            </br>
-
+                <h2>Dashboard</h2>
+                <hr/>
 
                 <div class="card-deck">
                     <div class="card">
@@ -335,17 +334,27 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="assets/js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
+<!-- Bootstrap core JavaScript-->
 
+<!-- Core plugin JavaScript-->
+<script src="assets/js/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <!-- Page level custom scripts -->
 <script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.11.0,npm/fullcalendar@5.11.0/locales-all.min.js,npm/fullcalendar@5.11.0/main.min.js"></script>
