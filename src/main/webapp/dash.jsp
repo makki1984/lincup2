@@ -2,6 +2,8 @@
 <%@ page import="java.util.Vector" %>
 <%@ page import="com.uh.rachel.util.tableClasses.eventScheduleTable" %>
 <%@ page import="com.uh.rachel.util.reportClasses.report3" %>
+<%@ page import="com.uh.rachel.util.reportClasses.report2" %>
+<%@ page import="com.uh.rachel.util.tableClasses.tasksTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
@@ -225,7 +227,7 @@
                 <div class="card-deck">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Calendar</h5>
+                            <h5 class="card-title"><strong>Calender</strong></h5>
                             <div id='calendar'></div>
                             <img class="card-img-bottom" src="https://img.freepik.com/free-vector/business-planning-web-design-concept-with-people-characters-illustration_9209-4585.jpg" alt="Card image cap">
 
@@ -243,7 +245,7 @@
 
                         <div class="card-body">
 </br>
-                            <h5 class="card-title">Active Requests</h5>
+                            <h5 class="card-title"><strong> Active Requests </strong></h5>
 
 
                             <ol class="list-group scroll list-group-numbered">
@@ -262,6 +264,9 @@
                                     }
                                 %>
                             </ol>
+                            <br>
+
+
 
 
                         </div>
@@ -272,21 +277,22 @@
                     <div class="card ">
 
                         <div class="card-body ">
-                            <h5 class="card-title">Events</h5>
+                            <h5 class="card-title"><strong>Relevant Tasks</strong></h5>
 
                             <div class="list-group scroll ">
-                                <% Vector<eventScheduleTable> v = DataHandler.getEventSchedule();
-                                    for (eventScheduleTable c : v) {
+                                <% Vector<tasksTable> v = DataHandler.getTasks();
+                                    for (tasksTable c : v) {
                                 %>
                                 <ul class="list-group-item list-group-item-action">
 
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1"><td><%= String.valueOf(c.getEventName())%></td>
+                                        <h5 class="mb-1"><td><%= String.valueOf(c.getTaskName())%></td>
                                         </h5>
-                                        <small>Event Schedule ID:<%= String.valueOf(c.getEventScheduleId())%></small>
+                                        <small>Task ID:<%= String.valueOf(c.getTaskId())%></small>
                                     </div>
-                                    <p class="mb-1"><td><%= String.valueOf(c.getEventType())%></td></p>
+                                    <p class="mb-1"><td><%= String.valueOf(c.getDescription())%></td></p>
                                     <small>Event ID:<%= String.valueOf(c.getEventId())%></small> <small>Member ID:<%= String.valueOf(c.getMemberid())%></small>
+                                    <span class="badge badge-primary"> <%= String.valueOf(c.getStatus())%></span>
 
 
                                 </ul>
