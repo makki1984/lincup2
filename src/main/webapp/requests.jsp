@@ -30,6 +30,12 @@
     padding: 0;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
+  }
+  .badge.badge-secondary{
+    background-color: mediumseagreen;
+    position: absolute;
+    top: -5px;
+    right: -5px;
   }</style>
 </head>
 
@@ -78,7 +84,6 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Options:</h6>
           <a class="collapse-item" href="events.jsp">Event List</a>
-          <a class="collapse-item" href="eventSchedule.jsp">Event Calendar</a>
 
         </div>
       </div>
@@ -180,75 +185,56 @@
       <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
-      <div class="container-fluid mt-5 pt-5">
-
+      <div class="container-fluid">
+        <h2>Open Requests</h2>
+        <hr/>
         <!-- Page Heading -->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 mb-3">
 
-        <h2>Requests</h2>
-        <hr/>        <div class="row justify-content-center">
-          <div class="col-md-10 mb-3">
-
-
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-              </div>
-              <div class="card-body">
-
-
-
-<table id="Table"
-       class=" table table-striped dataTables_scroll dataTable" style="width: 100%">
-  <thead>
-  <tr>
-    <th>Request ID</th>
-    <th>Member ID</th>
-    <th colspan="2">Member Name</th>
-    <th>Org ID</th>
-    <th>Org Name</th>
-
-
-  </tr>
-
-  </thead>
-  <tbody>
-                  <% Vector<report3> v = DataHandler.getReport3();
-                    for (report3 c : v) {
+            </div>
+            <div class="row" id="myItems">
+              <div class="col-sm-12 mb-3">
+                <div class="card-deck">
+                  <% Vector<report3> a = DataHandler.getReport3();
+                    for (report3 c : a) {
                   %>
-                  <tr>
-                    <td><%= String.valueOf(c.getRequestsPackage().getRequestId())%> </td>
-                    <td><%= String.valueOf(c.getMembersPackage().getMemberid())%></td>
-                    <td><%= String.valueOf(c.getMembersPackage().getFirstName())%> </td>
-                    <td><%= String.valueOf(c.getMembersPackage().getLastName())%> </td>
-                    <td><%= String.valueOf(c.getStudentOrgPackage().getOrgId())%> </td>
-                    <td><%= String.valueOf(c.getStudentOrgPackage().getOrgName())%> </td>
+                  <div class="card text-center" style="width: 15rem;">
+                    <div class="card-body">
+                      <h5><span class="badge badge-secondary"><%= String.valueOf(c.getRequestsPackage().getRequestId())%> </span></h5>
+                      <h4 class="card-title"><%= String.valueOf(c.getMembersPackage().getFirstName())%>&nbsp;<%= String.valueOf(c.getMembersPackage().getLastName())%>
+                      </h4>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= String.valueOf(c.getStudentOrgPackage().getOrgName())%>
+                        , <%= String.valueOf(c.getStudentOrgPackage().getUniversity())%>
+                      </h6>
 
-                  </tr>
+                    </div>
+
+
+                    <div class="card-footer">
+                      <center></center>
+                      <small class="text-muted" >Awaiting Approval</small>
+
+
+
+                    </div>
+                  </div>
                   <%
                     }
                   %>
-  </tbody>
-  <tfoot>
-  <tr>
-    <th>Request ID</th>
-    <th>Member ID</th>
-    <th colspan="2">Member Name</th>
-    <th>Org ID</th>
-    <th>Org Name</th>
-  </tr>
-  </tfoot>
-</table>
+                </div>
               </div>
-            </div>
-          </div>
+
+
+
 
         </div>
       </div>
 
+        </div>
 
-
-
-
-
+    </div>
       <!-- /.container-fluid -->
 
     </div>

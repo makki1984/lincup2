@@ -416,6 +416,7 @@ public class DataHandler {
                         result.getString("firstname"),
                         result.getString("lastname")),
                         new studentOrgTable(result.getString("orgName"),
+                                result.getString("university"),
                         result.getInt("orgId"))));
             }
         } catch (Exception e) {
