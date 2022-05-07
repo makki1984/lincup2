@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>INC UP</title>
+    <title>LINC UP</title>
     <!-- Font Awesome icons (free version)-->
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
@@ -50,7 +50,7 @@
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
                     <h2 class="display-4">For those all about rocking and taste testing...</h2>
-                    <p>Do you listening and making music? Baking and BBQing? Giving back to your community and helping new and different people from all over the state of Texas! </p>
+                    <p>Do you like listening to and making music? Baking and BBQing? Giving back to your community and helping new and different people from all over the state of Texas? </p>
                 </div>
             </div>
         </div>
@@ -65,8 +65,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="p-5">
-                    <h2 class="display-4">For those who always looking for an adventure...</h2>
-                    <p>Do you eat, live, breathe the outdoors? Can't stand to stay in one spot? Climbing, hiking and swimming makes you jump with joy?</p>
+                    <h2 class="display-4">For those who are always looking for an adventure...</h2>
+                    <p>Do you eat, live, breathe the outdoors? Can't stand to stay in one spot? Climbing, hiking and swimming make you jump with joy?</p>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
                     <h2 class="display-4">Sign up NOW!</h2>
-                    <p>LINCUP makes it easy to search, manage, and explore new and exciting organizations in yoru area. With just a few click of a button you'll be making music, cooking food, volunteering or having an adventure within no time!</p>
+                    <p>LINCUP makes it easy to search, manage, and explore new and exciting organizations in your area. With just a few clicks, you'll be making music, cooking food, volunteering or having an adventure within no time!</p>
                 </div>
             </div>
         </div>
