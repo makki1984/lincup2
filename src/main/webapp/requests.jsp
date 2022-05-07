@@ -195,7 +195,7 @@
 
             </div>
             <div class="row" id="myItems">
-              <div class="col-sm-12 mb-3">
+              <div class="col-sm-20 mb-10">
                 <div class="card-deck">
                   <% Vector<report3> a = DataHandler.getReport3();
                     for (report3 c : a) {

@@ -35,31 +35,20 @@
         font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
         font-size: 14px;
     }
+
     td {
-        width:0.1%;
+        width: 0.1%;
 
     }
 
-    .hidetext { -webkit-text-security: disc; /* Default */ }
+    .hidetext {
+        -webkit-text-security: disc; /* Default */
+    }
     </style>
 </head>
 
 
-
 <body id="page-top">
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- Page Wrapper -->
@@ -103,7 +92,6 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Options:</h6>
                     <a class="collapse-item" href="events.jsp">Event List</a>
-                    <a class="collapse-item" href="eventSchedule.jsp">Event Calendar</a>
 
                 </div>
             </div>
@@ -173,10 +161,6 @@
                 <ul class="navbar-nav ml-auto">
 
 
-
-
-
-
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
@@ -213,241 +197,244 @@
                 <div class="row justify-content-center">
 
 
-                        <div class="card shadow">
-                            <div class="card-header">
-                                <button class="btn btn-primary"
-                                        data-bs-toggle="modal" data-bs-target="#addModal">Add Member</button>
-                            </div>
-                            <div class="card-body">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <button class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#addModal">Add Member
+                            </button>
+                        </div>
+                        <div class="card-body">
 
-                                <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-                                     aria-labelledby="addModalLabel" aria-hidden="false">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="addModalLabel">Add Member</h5>
-                                                <button type="button" class="close" data-bs-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="false">&times;</span>
+                            <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="addModalLabel" aria-hidden="false">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="addModalLabel">Add Member</h5>
+                                            <button type="button" class="close" data-bs-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="false">&times;</span>
 
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
 
-                                                <form action="insertMembers" method="post" >
+                                            <form action="insertMembers" method="post">
 
-                                                        <div class="form row">
+                                                <div class="form row">
 
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">Member ID</label>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">Member ID</label>
 
-                                                                <input name="memberIdInput" type="text"
-                                                                       class="form-control form-control-sm memberIdInput"
-                                                                       required ></div>
-
-
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">First Name</label>
-                                                                <input name="firstNameInput" type="text"
-                                                                       class="form-control form-control-sm firstNameInput"
-                                                                       required>
-                                                            </div>
+                                                        <input name="memberIdInput" type="text"
+                                                               class="form-control form-control-sm memberIdInput"
+                                                               required></div>
 
 
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">Last Name</label>
-                                                                <input name="lastNameInput" type="text"
-                                                                       class="form-control form-control-sm lastNameInput"
-                                                                       required>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--                          -->
-                                                        <div class="form row">
-
-                                                            <div class="form-group col-md-4">
-
-                                                                <label class="form-label">DOB
-                                                                </label>
-                                                                <input name="dobInput" type="date"
-                                                                       class="form-control form-control-sm dobInput"
-                                                                       required>
-                                                            </div>
-
-
-                                                            <div class="form-group col-md-4">
-
-                                                                <label class="form-label">Email
-                                                                </label>
-                                                                <input name="emailInput" type="text"
-                                                                       class="form-control form-control-sm emailInput"
-                                                                       required>
-
-                                                            </div>
-
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">Password
-                                                                </label>
-                                                                <input name="passInput" type="password"
-                                                                       class="form-control form-control-sm passInput"
-                                                                       required>
-
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form row">
-
-                                                            <div class="form-group col-md-4">
-
-                                                                <label class="form-label">High School
-                                                                </label>
-                                                                <input name="highSchoolInput" type="text"
-                                                                       class="form-control form-control-sm highSchoolInput"
-                                                                       required>
-                                                            </div>
-
-
-                                                            <div class="form-group col-md-4">
-
-                                                                <label class="form-label">After Graduation
-                                                                </label>
-                                                                <input name="afterGraduationInput"
-                                                                       type="text"
-                                                                       class="form-control form-control-sm afterGraduationInput"
-                                                                       required>
-
-                                                            </div>
-
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">Church
-                                                                </label>
-                                                                <input name="churchNameInput" type="text"
-                                                                       class="form-control form-control-sm churchNameInput"
-                                                                       required>
-
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form row">
-
-                                                            <div class="form-group col-md-6 ml-auto
-">
-                                                                <label class="form-label">Interest 1
-                                                                </label>
-                                                                <input name="interest1Input" type="text"
-                                                                       class="form-control form-control-sm interest1Input"
-                                                                       required>
-                                                            </div>
-                                                            <div class="form-group col-md-6 ml-auto
-">
-                                                                <label class="form-label">Interest 2
-                                                                </label>
-                                                                <input name="interest2Input" type="text"
-                                                                       class="form-control form-control-sm interest2Input"
-                                                                >
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form row">
-                                                            <div class="form-group col-md-6">
-                                                                <label class="form-label">Interest 3
-                                                                </label>
-                                                                <input name="interest3Input" type="text"
-                                                                       class="form-control form-control-sm interest3Input"
-                                                                >
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label class="form-label">Interest 4
-                                                                </label>
-                                                                <input name="interest4Input" type="text"
-                                                                       class="form-control form-control-sm interest4Input"
-                                                                >
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form row">
-
-                                                            <div class="form-group col-md-4">
-
-                                                                <label class="form-label">Phone
-                                                                </label>
-                                                                <input name="phoneInput" type="text"
-                                                                       class="form-control form-control-sm phoneInput"
-                                                                       required>
-                                                            </div>
-
-
-                                                            <div class="form-group col-md-4">
-
-
-                                                                <label class="form-label">Org
-                                                                </label>
-
-                                                                <select name="orgIdInput" type="text"
-                                                                        class="form-control form-control-sm orgIdInput"
-                                                                        required>
-                                                                    <% Vector<studentOrgTable> t = DataHandler.getStudentOrg();
-                                                                        for (studentOrgTable u : t) {
-                                                                    %>
-
-
-                                                                    <option value="<%= String.valueOf(u.getOrgId())%>"><%= String.valueOf(u.getOrgName())%></option>
-                                                                    <%
-                                                                        }
-                                                                    %>
-                                                                </select>
-                                                                <%
-
-                                                                %>
-
-                                                            </div>
-
-                                                            <div class="form-group col-md-4">
-                                                                <label class="form-label">Admin ID
-                                                                </label>
-                                                                <input name="adminIdInput" type="text"
-                                                                       class="form-control form-control-sm adminIdInput"
-                                                                       required>
-
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-
-                                                                <label class="form-label">Event
-                                                                </label>
-                                                                <select name="eventIdInput" type="text"
-                                                                        class="form-control form-control-sm eventIdInput"
-                                                                        required>
-                                                                    <% Vector<eventsTable> x = DataHandler.getEvents();
-                                                                        for (eventsTable z : x) {
-                                                                    %>
-
-
-                                                                    <option value="<%= String.valueOf(z.getEventId())%>"><%= String.valueOf(z.getEventName())%></option>
-                                                                    <%
-                                                                        }
-                                                                    %>
-                                                                </select>
-                                                                <%
-
-                                                                %>
-                                                            </div>
-
-                                                            </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Cancel
-                                                        </button>
-
-                                                        <button type="submit" class="btn btn-primary">Add New Member
-                                                        </button>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">First Name</label>
+                                                        <input name="firstNameInput" type="text"
+                                                               class="form-control form-control-sm firstNameInput"
+                                                               required>
                                                     </div>
-                                                </form>
-                                            </div>
+
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">Last Name</label>
+                                                        <input name="lastNameInput" type="text"
+                                                               class="form-control form-control-sm lastNameInput"
+                                                               required>
+                                                    </div>
+                                                </div>
+
+                                                <!--                          -->
+                                                <div class="form row">
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="form-label">DOB
+                                                        </label>
+                                                        <input name="dobInput" type="date"
+                                                               class="form-control form-control-sm dobInput"
+                                                               required>
+                                                    </div>
+
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="form-label">Email
+                                                        </label>
+                                                        <input name="emailInput" type="text"
+                                                               class="form-control form-control-sm emailInput"
+                                                               required>
+
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">Password
+                                                        </label>
+                                                        <input name="passInput" type="password"
+                                                               class="form-control form-control-sm passInput"
+                                                               required>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form row">
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="form-label">High School
+                                                        </label>
+                                                        <input name="highSchoolInput" type="text"
+                                                               class="form-control form-control-sm highSchoolInput"
+                                                               required>
+                                                    </div>
+
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="form-label">After Graduation
+                                                        </label>
+                                                        <input name="afterGraduationInput"
+                                                               type="text"
+                                                               class="form-control form-control-sm afterGraduationInput"
+                                                               required>
+
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">Church
+                                                        </label>
+                                                        <input name="churchNameInput" type="text"
+                                                               class="form-control form-control-sm churchNameInput"
+                                                               required>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form row">
+
+                                                    <div class="form-group col-md-6 ml-auto
+">
+                                                        <label class="form-label">Interest 1
+                                                        </label>
+                                                        <input name="interest1Input" type="text"
+                                                               class="form-control form-control-sm interest1Input"
+                                                               required>
+                                                    </div>
+                                                    <div class="form-group col-md-6 ml-auto
+">
+                                                        <label class="form-label">Interest 2
+                                                        </label>
+                                                        <input name="interest2Input" type="text"
+                                                               class="form-control form-control-sm interest2Input"
+                                                        >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form row">
+                                                    <div class="form-group col-md-6">
+                                                        <label class="form-label">Interest 3
+                                                        </label>
+                                                        <input name="interest3Input" type="text"
+                                                               class="form-control form-control-sm interest3Input"
+                                                        >
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label class="form-label">Interest 4
+                                                        </label>
+                                                        <input name="interest4Input" type="text"
+                                                               class="form-control form-control-sm interest4Input"
+                                                        >
+                                                    </div>
+                                                </div>
+
+                                                <div class="form row">
+
+                                                    <div class="form-group col-md-4">
+
+                                                        <label class="form-label">Phone
+                                                        </label>
+                                                        <input name="phoneInput" type="text"
+                                                               class="form-control form-control-sm phoneInput"
+                                                               required>
+                                                    </div>
+
+
+                                                    <div class="form-group col-md-4">
+
+
+                                                        <label class="form-label">Org
+                                                        </label>
+
+                                                        <select name="orgIdInput" type="text"
+                                                                class="form-control form-control-sm orgIdInput"
+                                                                required>
+                                                            <% Vector<studentOrgTable> t = DataHandler.getStudentOrg();
+                                                                for (studentOrgTable u : t) {
+                                                            %>
+
+
+                                                            <option value="<%= String.valueOf(u.getOrgId())%>"><%= String.valueOf(u.getOrgName())%>
+                                                            </option>
+                                                            <%
+                                                                }
+                                                            %>
+                                                        </select>
+                                                        <%
+
+                                                        %>
+
+                                                    </div>
+
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label">Admin ID
+                                                        </label>
+                                                        <input name="adminIdInput" type="text"
+                                                               class="form-control form-control-sm adminIdInput"
+                                                               required>
+
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+
+                                                        <label class="form-label">Event
+                                                        </label>
+                                                        <select name="eventIdInput" type="text"
+                                                                class="form-control form-control-sm eventIdInput"
+                                                                required>
+                                                            <% Vector<eventsTable> x = DataHandler.getEvents();
+                                                                for (eventsTable z : x) {
+                                                            %>
+
+
+                                                            <option value="<%= String.valueOf(z.getEventId())%>"><%= String.valueOf(z.getEventName())%>
+                                                            </option>
+                                                            <%
+                                                                }
+                                                            %>
+                                                        </select>
+                                                        <%
+
+                                                        %>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Cancel
+                                                    </button>
+
+                                                    <button type="submit" class="btn btn-primary">Add New Member
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table-wrap">
-                                    <div style="height:690px">
+                            </div>
+                            <div class="table-wrap">
+                                <div style="height:690px">
 
 
                                     <table id="membersTable"
@@ -455,24 +442,24 @@
 
                                     >
                                         <thead>
-                                        <tr >
-                                            <th >Member ID</th>
+                                        <tr>
+                                            <th>Member ID</th>
                                             <th colspan="2">Name</th>
 
-                                            <th >DOB</th>
-                                            <th >Email</th>
-                                            <th >Pass</th>
-                                            <th >High School</th>
-                                            <th >After Graduation</th>
-                                            <th >Church Name</th>
-                                            <th  colspan="4">Interests</th>
+                                            <th>DOB</th>
+                                            <th>Email</th>
+                                            <th>Pass</th>
+                                            <th>High School</th>
+                                            <th>After Graduation</th>
+                                            <th>Church Name</th>
+                                            <th colspan="4">Interests</th>
 
 
-                                            <th >Phone</th>
-                                            <th >Org ID</th>
-                                            <th >Admin ID</th>
-                                            <th >Event ID</th>
-                                            <th >Actions</th>
+                                            <th>Phone</th>
+                                            <th>Org ID</th>
+                                            <th>Admin ID</th>
+                                            <th>Event ID</th>
+                                            <th>Actions</th>
 
                                         </tr>
 
@@ -493,7 +480,7 @@
                                             </td>
                                             <td class="member-email"><%= String.valueOf(c.getMembersPackage().getEmail())%>
                                             </td>
-                                            <td class="member-pass hidetext" ><%= String.valueOf(c.getMembersPackage().getPass())%>
+                                            <td class="member-pass hidetext"><%= String.valueOf(c.getMembersPackage().getPass())%>
                                             </td>
                                             <td class="member-hs"><%= String.valueOf(c.getMembersPackage().getHighSchool())%>
                                             </td>
@@ -505,13 +492,13 @@
                                             </td>
                                             <td class="member-int2"><%= String.valueOf(c.getMembersPackage().getInterest2())%>
                                             </td>
-                                            <td class="member-int3" ><%= String.valueOf(c.getMembersPackage().getInterest3())%>
+                                            <td class="member-int3"><%= String.valueOf(c.getMembersPackage().getInterest3())%>
                                             </td>
                                             <td class="member-int4"><%= String.valueOf(c.getMembersPackage().getInterest4())%>
                                             </td>
                                             <td class="member-phone"><%= String.valueOf(c.getMembersPackage().getPhone())%>
                                             </td>
-                                            <td class="ord-id" ><%= Integer.valueOf(c.getMembersPackage().getOrgid())%>
+                                            <td class="ord-id"><%= Integer.valueOf(c.getMembersPackage().getOrgid())%>
                                             </td>
                                             <td class="admin-id"><%= Integer.valueOf(c.getMembersPackage().getAdminId())%>
                                             </td>
@@ -542,7 +529,8 @@
                                                                         <label class="col-form-label">Member
                                                                             ID:</label>
                                                                         <input name="memberIdDelete" type="text"
-                                                                               class="form-control memberIdDelete" readonly
+                                                                               class="form-control memberIdDelete"
+                                                                               readonly
                                                                                required>
                                                                     </div>
 
@@ -693,7 +681,7 @@
                                                                             </label>
                                                                             <input name="interest2Input" type="text"
                                                                                    class="form-control form-control-sm interest2Input"
-                                                                                   >
+                                                                            >
                                                                         </div>
                                                                     </div>
 
@@ -703,14 +691,14 @@
                                                                             </label>
                                                                             <input name="interest3Input" type="text"
                                                                                    class="form-control form-control-sm interest3Input"
-                                                                                   >
+                                                                            >
                                                                         </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="form-label">Interest 4
                                                                             </label>
                                                                             <input name="interest4Input" type="text"
                                                                                    class="form-control form-control-sm interest4Input"
-                                                                                   >
+                                                                            >
                                                                         </div>
                                                                     </div>
 
@@ -739,7 +727,8 @@
                                                                                 %>
 
 
-                                                                                <option value="<%= String.valueOf(b.getOrgId())%>"><%= String.valueOf(b.getOrgName())%></option>
+                                                                                <option value="<%= String.valueOf(b.getOrgId())%>"><%= String.valueOf(b.getOrgName())%>
+                                                                                </option>
                                                                                 <%
                                                                                     }
                                                                                 %>
@@ -758,35 +747,37 @@
                                                                                    required>
 
                                                                         </div>
-                                                                       <!-- <div class="form-group col-md-6">
-                                                                            <label class="form-label">Event ID
-                                                                            </label>
-                                                                            <input name="eventIdInput" type="text"
-                                                                                   class="form-control form-control-sm eventIdInput"
-                                                                                   required>
+                                                                        <!-- <div class="form-group col-md-6">
+                                                                             <label class="form-label">Event ID
+                                                                             </label>
+                                                                             <input name="eventIdInput" type="text"
+                                                                                    class="form-control form-control-sm eventIdInput"
+                                                                                    required>
 
-                                                                        </div>
--->
+                                                                         </div>
+ -->
 
                                                                         <div class="form-group col-md-6">
-                                                                        <label class="form-label">Event ID
-                                                                        </label>
+                                                                            <label class="form-label">Event ID
+                                                                            </label>
                                                                             <select name="eventIdInput" type="text"
                                                                                     class="form-control form-control-sm eventIdInput"
                                                                                     required>
-                                                                                <% Vector<eventsTable> w = DataHandler.getEvents();
+                                                                                <%
+                                                                                    Vector<eventsTable> w = DataHandler.getEvents();
                                                                                     for (eventsTable a : w) {
                                                                                 %>
 
 
-                                                                                <option value="<%= String.valueOf(a.getEventId())%>"><%= String.valueOf(a.getEventName())%></option>
+                                                                                <option value="<%= String.valueOf(a.getEventId())%>"><%= String.valueOf(a.getEventName())%>
+                                                                                </option>
                                                                                 <%
                                                                                     }
                                                                                 %>
                                                                             </select>
-                                                                        <%
+                                                                            <%
 
-                                                                        %>
+                                                                            %>
                                                                         </div>
                                                                     </div>
 
@@ -811,39 +802,27 @@
                                         </tbody>
                                         <tfoot>
                                         <tr>
-                                            <th >Member ID</th>
+                                            <th>Member ID</th>
                                             <th colspan="2">Name</th>
 
 
-                                            <th >DOB</th>
-                                            <th >Email</th>
-                                            <th >Pass</th>
-                                            <th >High School</th>
-                                            <th >After Graduation</th>
-                                            <th >Church Name</th>
-                                            <th  colspan="4">Interests</th>
+                                            <th>DOB</th>
+                                            <th>Email</th>
+                                            <th>Pass</th>
+                                            <th>High School</th>
+                                            <th>After Graduation</th>
+                                            <th>Church Name</th>
+                                            <th colspan="4">Interests</th>
 
 
-                                            <th >Phone</th>
-                                            <th >Org ID</th>
-                                            <th >Admin ID</th>
-                                            <th >Event ID</th>
-                                            <th >Actions</th>
+                                            <th>Phone</th>
+                                            <th>Org ID</th>
+                                            <th>Admin ID</th>
+                                            <th>Event ID</th>
+                                            <th>Actions</th>
                                         </tr>
                                         </tfoot>
                                     </table>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                                 </div>
@@ -854,7 +833,6 @@
 
 
                 </div>
-
 
 
             </div>
@@ -922,8 +900,9 @@
 <!-- Custom scripts for all pages-->
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -933,24 +912,20 @@
 
 
     $(document).ready(function () {
-        $('#membersTable').DataTable( {
+        $('#membersTable').DataTable({
 
             "ordering": false,
-"searching" : false
+            "searching": false
 
-        } );
-    } );
-
-
-    $(function(){
-        $('input[type="text"]').change(function(){
-            this.value = $.trim(this.value);
         });
     });
 
 
-
-
+    $(function () {
+        $('input[type="text"]').change(function () {
+            this.value = $.trim(this.value);
+        });
+    });
 
 
     $(function () {

@@ -504,6 +504,7 @@
                                         </label>
                                         <select name="taskStatusInput" type="text"
                                                class="form-control form-control-sm taskStatusInput" required>
+
                                           <option>Active</option>
                                           <option>Completed</option>
                                           <option>Canceled</option>
@@ -636,6 +637,11 @@
     } );
   } );
 
+  $(function(){
+    $('input[type="text"]').change(function(){
+      this.value = $.trim(this.value);
+    });
+  });
 
 
   $(function() {

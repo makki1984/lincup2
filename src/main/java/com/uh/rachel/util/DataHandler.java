@@ -261,12 +261,15 @@ public class DataHandler {
             ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
+
     public static void insertRequestsRowByID(int orgIdInput, int memberIdInput) {
         try {
             Connection conn = ConnectionProvider.getConnection();
             PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.requests (orgId, memberid) VALUES(?, ?)");
             ps.setInt(1, orgIdInput);
             ps.setInt(2, memberIdInput);
+            ps.executeUpdate();
+            ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
 

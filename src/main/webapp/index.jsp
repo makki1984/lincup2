@@ -1,99 +1,101 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Quinn
-  Date: 4/8/2022
-  Time: 5:39 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page trimDirectiveWhitespaces="true" %>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
-    <title>LINCUP</title>
-
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/landing.css" rel="stylesheet" />
-
-    <!--     Fonts     -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>INC UP</title>
+    <!-- Font Awesome icons (free version)-->
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="assets/css/stylesindex.css" rel="stylesheet" />
 </head>
-
-<body>
-
-
-<div class="main" style="background-image: url('assets/images/landing.jpg')">
-
-    <!--    Change the image source '/images/default.jpg' with your favourite image.     -->
-
-    <div class="cover black" data-color="black"></div>
-
-    <div class="container">
-        <h1 class="logo cursive">
-            LincUp
-        </h1>
-
-        <div class="content">
-            <h4 class="motto">Connect with organizations based on YOUR interests today!</h4>
-            <div class="subscribe">
-                <h5 class="info-text">
-                    Sign up now to start creating new experiences and adventures.
-                </h5>
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
-
-                        <blockquote class="blockquote text-center">
-                            <p class="mb-0"><button type="submit" class="btn btn-light btn-fill"><a href=register.jsp>Sign Up</a></button></p>
-                            </br>
-                            <footer class="blockquote-footer">or <a href=login.jsp>Login</a></footer>
-                        </blockquote>
-
-
-                    </div>
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#page-top">LINCUP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="register.jsp">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.jsp">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Header-->
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h2 class="masthead-heading mb-0">Join Student Organizations at Your University TODAY!</h2>
+            <a class="btn btn-primary btn-xl square-pill mt-5" href="#scroll">Learn More</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid" src="https://www.usnews.com/dims4/USNEWS/6489748/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fmedia.beam.usnews.com%2F45%2F8c%2Fee131da64ce48f9d9b0dd1a23f68%2F210324.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">For those all about rocking and taste testing...</h2>
+                    <p>Do you listening and making music? Baking and BBQing? Giving back to your community and helping new and different people from all over the state of Texas! </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <ul class="navbar navbar-transparent navbar-fixed-top">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook-square"></i>
-                        Share
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                        Tweet
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:info@incup.us">
-                        <i class="fa fa-envelope-o"></i>
-                        Email
-                    </a>
-                </li>
-            </ul>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid" src="https://www.honorsociety.org/sites/default/files/uni-campus-21317" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2 class="display-4">For those who always looking for an adventure...</h2>
+                    <p>Do you eat, live, breathe the outdoors? Can't stand to stay in one spot? Climbing, hiking and swimming makes you jump with joy?</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid" src="https://uh.edu/landing-page-images/news-room-hero.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Sign up NOW!</h2>
+                    <p>LINCUP makes it easy to search, manage, and explore new and exciting organizations in yoru area. With just a few click of a button you'll be making music, cooking food, volunteering or having an adventure within no time!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-black">
+    <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; LINCUP 2022</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
+<!-- Core theme JS-->
 </body>
-
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
-<script src="./js/jquery-3.5.1.js"></script>
-<script src="./js/jquery.dataTables.min.js"></script>
-<script src="./js/dataTables.bootstrap5.min.js"></script>
-<script src="./js/script.js"></script>
 </html>
