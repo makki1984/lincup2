@@ -377,17 +377,32 @@
                                                             </div>
 
 
-                                                            <div class="form-group col-md-2">
+                                                            <div class="form-group col-md-4">
 
-                                                                <label class="form-label">Org ID
+
+                                                                <label class="form-label">Org
                                                                 </label>
-                                                                <input name="orgIdInput" type="text"
-                                                                       class="form-control form-control-sm orgIdInput"
-                                                                       required>
+
+                                                                <select name="orgIdInput" type="text"
+                                                                        class="form-control form-control-sm orgIdInput"
+                                                                        required>
+                                                                    <% Vector<studentOrgTable> t = DataHandler.getStudentOrg();
+                                                                        for (studentOrgTable u : t) {
+                                                                    %>
+
+
+                                                                    <option value="<%= String.valueOf(u.getOrgId())%>"><%= String.valueOf(u.getOrgName())%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
+                                                                <%
+
+                                                                %>
 
                                                             </div>
 
-                                                            <div class="form-group col-md-6">
+                                                            <div class="form-group col-md-4">
                                                                 <label class="form-label">Admin ID
                                                                 </label>
                                                                 <input name="adminIdInput" type="text"
@@ -396,14 +411,28 @@
 
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label class="form-label">Event ID
+
+                                                                <label class="form-label">Event
                                                                 </label>
-                                                                <input name="eventIdInput" type="text"
-                                                                       class="form-control form-control-sm eventIdInput"
-                                                                       required>
+                                                                <select name="eventIdInput" type="text"
+                                                                        class="form-control form-control-sm eventIdInput"
+                                                                        required>
+                                                                    <% Vector<eventsTable> x = DataHandler.getEvents();
+                                                                        for (eventsTable z : x) {
+                                                                    %>
+
+
+                                                                    <option value="<%= String.valueOf(z.getEventId())%>"><%= String.valueOf(z.getEventName())%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
+                                                                <%
+
+                                                                %>
+                                                            </div>
 
                                                             </div>
-                                                        </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Cancel
@@ -913,7 +942,11 @@
     } );
 
 
-
+    $(function(){
+        $('input[type="text"]').change(function(){
+            this.value = $.trim(this.value);
+        });
+    });
 
 
 
