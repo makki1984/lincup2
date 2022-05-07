@@ -261,13 +261,12 @@ public class DataHandler {
             ps.close();
         } catch (Exception e) {e.printStackTrace();}
     }
-    public static void insertRequestsRowByID(int requestIdInput, int orgIdInput, int memberIdInput) {
+    public static void insertRequestsRowByID(int orgIdInput, int memberIdInput) {
         try {
             Connection conn = ConnectionProvider.getConnection();
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.requests (requestId, orgId, memberid) VALUES(?, ?, ?)");
-            ps.setInt(1, requestIdInput);
-            ps.setInt(2, orgIdInput);
-            ps.setInt(3, memberIdInput);
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO sunlight.requests (orgId, memberid) VALUES(?, ?)");
+            ps.setInt(1, orgIdInput);
+            ps.setInt(2, memberIdInput);
         } catch (Exception e) {e.printStackTrace();}
     }
 
@@ -425,6 +424,41 @@ public class DataHandler {
         return v;
     }
 
+    public static Vector<report1> getReport1() {
+        Vector<report1> v = new Vector<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM sunlight.members JOIN sunlight.events ON events.eventId = members.eventId ");
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                v.add(new report1(
+
+                new membersTable(result.getInt("memberId"),
+                        result.getString("firstName"),
+                result.getString("lastName"),
+                result.getDate("dob"),
+                result.getString("email"),
+                result.getString("pass"),
+                result.getString("highSchool"),
+                result.getString("afterGraduation"),
+                result.getString("churchName"),
+                result.getString("interest1"),
+                        result.getString("interest2"),
+                        result.getString("interest3"),
+                        result.getString("interest4"),
+                        result.getString("phone"),
+                        result.getInt("orgId"),
+                                result.getInt("adminId"),
+                                        result.getInt("eventId")),
+                new eventsTable(result.getInt("eventId"),
+                        result.getString("eventName"))));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return v;
+    }
 
 
 

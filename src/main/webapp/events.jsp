@@ -621,8 +621,8 @@
         $('#eventsTable').DataTable
         ( {
 
-            "ordering": false
-
+            "ordering": false,
+            "searching" : false
 
         } );
     } );

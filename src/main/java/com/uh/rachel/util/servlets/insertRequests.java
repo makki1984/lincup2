@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "requests")
+@WebServlet(name = "Requests")
 public class insertRequests extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DataHandler.insertRequestsRowByID(
-                Integer.parseInt(request.getParameter("requestIdInput")),
-                (Integer.parseInt(request.getParameter("orgIdInput"))), (Integer.parseInt(request.getParameter("memberIdInput")))
+                (Integer.parseInt(request.getParameter("orgIdInput"))),
+                (Integer.parseInt(request.getParameter("memberIdInput")))
         );
-        response.sendRedirect("./requests.jsp");
+        response.sendRedirect("./matching.jsp");
     }
 }

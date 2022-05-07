@@ -32,6 +32,9 @@ eventsTable {
         this.interest4 = interest4;
     }
 
+    public eventsTable(int eventId, String eventName) {
+    }
+
 
     public int getEventId() {
         return eventId;

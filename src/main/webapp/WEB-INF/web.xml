@@ -102,6 +102,17 @@
         <url-pattern>/insertOrg</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>insertRequests</servlet-name>
+        <servlet-class>com.uh.rachel.util.servlets.insertRequests</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>insertRequests</servlet-name>
+        <url-pattern>/insertRequests</url-pattern>
+    </servlet-mapping>
+
+
 
 
 

@@ -629,7 +629,8 @@
   $(document).ready( function () {
     $('#taskTable').DataTable( {
 
-      "ordering": false
+      "ordering": false,
+      "searching" : false
 
 
     } );

@@ -1,12 +1,10 @@
 <%@ page import="com.uh.rachel.util.DataHandler" %>
 <%@ page import="java.util.Vector" %>
-<%@ page import="com.uh.rachel.util.tableClasses.membersTable" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ page import="com.uh.rachel.util.tableClasses.studentOrgTable" %>
 <%@ page import="com.uh.rachel.util.tableClasses.eventsTable" %>
-
-
+<%@ page import="com.uh.rachel.util.reportClasses.report1" %>
 
 
 <!DOCTYPE html>
@@ -194,7 +192,7 @@
                              aria-labelledby="userDropdown">
 
 
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -451,44 +449,44 @@
 
                                         </thead>
                                         <tbody>
-                                        <% Vector<membersTable> v = DataHandler.getMembers();
-                                            for (membersTable c : v) {
+                                        <% Vector<report1> v = DataHandler.getReport1();
+                                            for (report1 c : v) {
                                         %>
 
                                         <tr>
-                                            <td class="member-id"><%= Integer.valueOf(c.getMemberid())%>
+                                            <td class="member-id"><%= Integer.valueOf(c.getMembersPackage().getMemberid())%>
                                             </td>
-                                            <td class="member-first"><%= String.valueOf(c.getFirstName())%>
+                                            <td class="member-first"><%= String.valueOf(c.getMembersPackage().getFirstName())%>
                                             </td>
-                                            <td class="member-last"><%= String.valueOf(c.getLastName())%>
+                                            <td class="member-last"><%= String.valueOf(c.getMembersPackage().getLastName())%>
                                             </td>
-                                            <td class="member-dob"><%= String.valueOf(c.getDob())%>
+                                            <td class="member-dob"><%= String.valueOf(c.getMembersPackage().getDob())%>
                                             </td>
-                                            <td class="member-email"><%= String.valueOf(c.getEmail())%>
+                                            <td class="member-email"><%= String.valueOf(c.getMembersPackage().getEmail())%>
                                             </td>
-                                            <td class="member-pass hidetext" ><%= String.valueOf(c.getPass())%>
+                                            <td class="member-pass hidetext" ><%= String.valueOf(c.getMembersPackage().getPass())%>
                                             </td>
-                                            <td class="member-hs"><%= String.valueOf(c.getHighSchool())%>
+                                            <td class="member-hs"><%= String.valueOf(c.getMembersPackage().getHighSchool())%>
                                             </td>
-                                            <td class="member-ag"><%= String.valueOf(c.getAfterGraduation())%>
+                                            <td class="member-ag"><%= String.valueOf(c.getMembersPackage().getAfterGraduation())%>
                                             </td>
-                                            <td class="member-church"><%= String.valueOf(c.getChurchName())%>
+                                            <td class="member-church"><%= String.valueOf(c.getMembersPackage().getChurchName())%>
                                             </td>
-                                            <td class="member-int1"><%= String.valueOf(c.getInterest1())%>
+                                            <td class="member-int1"><%= String.valueOf(c.getMembersPackage().getInterest1())%>
                                             </td>
-                                            <td class="member-int2"><%= String.valueOf(c.getInterest2())%>
+                                            <td class="member-int2"><%= String.valueOf(c.getMembersPackage().getInterest2())%>
                                             </td>
-                                            <td class="member-int3" ><%= String.valueOf(c.getInterest3())%>
+                                            <td class="member-int3" ><%= String.valueOf(c.getMembersPackage().getInterest3())%>
                                             </td>
-                                            <td class="member-int4"><%= String.valueOf(c.getInterest4())%>
+                                            <td class="member-int4"><%= String.valueOf(c.getMembersPackage().getInterest4())%>
                                             </td>
-                                            <td class="member-phone"><%= String.valueOf(c.getPhone())%>
+                                            <td class="member-phone"><%= String.valueOf(c.getMembersPackage().getPhone())%>
                                             </td>
-                                            <td class="ord-id" ><%= Integer.valueOf(c.getOrgid())%>
+                                            <td class="ord-id" ><%= Integer.valueOf(c.getMembersPackage().getOrgid())%>
                                             </td>
-                                            <td class="admin-id"><%= Integer.valueOf(c.getAdminId())%>
+                                            <td class="admin-id"><%= Integer.valueOf(c.getMembersPackage().getAdminId())%>
                                             </td>
-                                            <td class="event-id"><%= Integer.valueOf(c.getEventId())%>
+                                            <td class="event-id"><%= Integer.valueOf(c.getMembersPackage().getEventId())%>
                                             </td>
                                             <td>
 
@@ -908,11 +906,18 @@
     $(document).ready(function () {
         $('#membersTable').DataTable( {
 
-            "ordering": false
-
+            "ordering": false,
+"searching" : false
 
         } );
     } );
+
+
+
+
+
+
+
 
 
     $(function () {
