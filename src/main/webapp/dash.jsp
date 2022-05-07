@@ -116,7 +116,6 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Options:</h6>
                     <a class="collapse-item" href="events.jsp">Event List</a>
-                    <a class="collapse-item" href="eventSchedule.jsp">Event Calendar</a>
 
                 </div>
             </div>
@@ -254,7 +253,7 @@
                                 %>
                                 <li class="list-group-item d-flex justify-content-between align-items-start">
                                     <div class="ms-2 me-auto">
-                                        <div class="fw-bold"><%= String.valueOf(c.getMembersPackage().getFirstName())%> <%= String.valueOf(c.getMembersPackage().getLastName())%></div>
+                                        <div class="fw-bold"><%= String.valueOf(c.getMembersPackage().getFirstName())%>&nbsp;<%= String.valueOf(c.getMembersPackage().getLastName())%></div>
                                         <%= String.valueOf(c.getStudentOrgPackage().getOrgName())%>
                                     </div>
                                     <span class="badge badge-primary">Request ID: <%= String.valueOf(c.getRequestsPackage().getRequestId())%></span>

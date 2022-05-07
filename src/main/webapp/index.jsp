@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>INC UP</title>
+    <title>LINC UP</title>
     <!-- Font Awesome icons (free version)-->
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
@@ -93,7 +93,6 @@
     <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; LINCUP 2022</p></div>
 </footer>
 <!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core theme JS-->
